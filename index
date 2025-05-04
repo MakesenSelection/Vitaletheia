@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VITALETHEIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert-pastel: #d4e9d7;
+      --vert-doux: #b6d7b9;
+      --bleu-pastel: #cce4f6;
+      --bleu-gris: #b0cddf;
+      --creme: #fdf6e3;
+      --texte: #2a2a2a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(145deg, var(--creme), var(--vert-pastel), var(--bleu-pastel));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--texte);
+      padding: 2rem;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 3.5rem;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #2e423f;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>VITALETHEIA</h1>
+    <p>Bienvenue sur VITALETHEIA, un espace dédié à la santé naturelle, à la vitalité et à la vérité du vivant. À venir : des articles, des conseils et des ressources pour retrouver un équilibre profond.</p>
+  </div>
+</body>
+</html>
