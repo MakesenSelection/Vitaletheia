@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VITALETHEIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+  <title>VITALETHEIA - Naturopathie intégrative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --vert-pastel: #d4e9d7;
@@ -13,17 +13,22 @@
       --bleu-gris: #b0cddf;
       --creme: #fdf6e3;
       --texte: #2a2a2a;
+      --separateur: rgba(46, 66, 63, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       color: var(--texte);
-      padding: 2rem;
+      padding: 1rem;
       background: linear-gradient(45deg, var(--creme), var(--vert-pastel), var(--bleu-pastel), var(--vert-doux));
       background-size: 600% 600%;
       animation: gradientShift 20s ease infinite;
@@ -35,22 +40,68 @@
       100% { background-position: 0% 50%; }
     }
 
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     h1 {
+      font-family: 'Playfair Display', serif;
       font-weight: 300;
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
       letter-spacing: 0.1em;
       margin-top: 3rem;
       margin-bottom: 2rem;
       color: #2e423f;
       text-align: center;
+      padding: 0 1rem;
     }
 
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
+    .separator {
+      width: 80%;
+      max-width: 400px;
+      height: 1px;
+      background: var(--separateur);
+      margin: 2rem 0;
+    }
+
+    .phrases-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+
+    .phrase {
+      font-size: 1.1rem;
+      line-height: 1.6;
       text-align: center;
       font-weight: 300;
-      max-width: 700px;
+      padding: 1rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      animation: float 6s ease-in-out infinite;
+      width: 100%;
+    }
+
+    .phrase:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    .phrase:nth-child(3) {
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     /* Menu déroulant */
@@ -69,6 +120,11 @@
       font-size: 1rem;
       border-radius: 0.5rem;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-button:hover {
+      background-color: rgba(46, 66, 63, 1);
     }
 
     .menu-content {
@@ -80,6 +136,7 @@
       border-radius: 0.5rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
+      min-width: 180px;
     }
 
     .menu-content a {
@@ -98,53 +155,171 @@
     .menu-container:hover .menu-content {
       display: block;
     }
+
+    /* Section approche */
+    section {
+      max-width: 750px;
+      margin: 4rem auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      padding: 0 1rem;
+    }
+
+    section p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    ul, ol {
+      text-align: left;
+      display: inline-block;
+      margin: 1rem auto;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 0.5rem;
+      }
+      
+      h1 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .separator {
+        margin: 1.5rem 0;
+      }
+      
+      .phrases-container {
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      
+      .phrase {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+      }
+      
+      section {
+        margin: 2.5rem auto;
+      }
+      
+      .menu-container {
+        top: 15px;
+        right: 15px;
+      }
+      
+      .menu-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .phrases-container {
+        gap: 0.8rem;
+      }
+      
+      .phrase {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+      }
+      
+      section {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="menu-container">
-    <button class="menu-button">Menu</button>
-    <div class="menu-content">
-      <a href="#contact">Contact</a>
-      <a href="#apropos">À propos</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#consultation">La consultation</a>
-      <a href="#approche">Mon approche</a>
+  <div class="container">
+    <div class="menu-container">
+      <button class="menu-button">Menu</button>
+      <div class="menu-content">
+        <a href="#contact">Contact</a>
+        <a href="#apropos">À propos</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#consultation">La consultation</a>
+        <a href="#approche">Mon approche</a>
+      </div>
     </div>
+
+    <h1>VITALETHEIA</h1>
+    
+    <div class="separator"></div>
+    
+    <div class="phrases-container">
+      <div class="phrase">Le fond précède la forme</div>
+      <div class="phrase">Le temps consacré à la santé sera déduit de celui consacré à la maladie</div>
+      <div class="phrase">Replacer l'individu au centre de ses besoins essentiels</div>
+    </div>
+
+    <section id="approche">
+      <p>
+        Inspirée à la fois par les courants hygiénistes traditionnels et par les avancées de la médecine fonctionnelle et métabolique, mon approche vise à se concentrer sur la problématique qui vous amène à moi, en mobilisant les items adaptés de ma « boîte à outils » naturopathique.
+      </p>
+      <p>
+        Idéale pour accompagner ou améliorer les troubles chroniques — particulièrement fréquents chez les personnes âgées — cette approche globale s'attache à comprendre la cause profonde du déséquilibre. Parmi les troubles les plus courants dans ce cadre : 
+        <ul>
+          <li>Fatigue chronique</li>
+          <li>Troubles du sommeil</li>
+          <li>Troubles cutanés</li> 
+          <li>Arthrose</li>
+          <li>Troubles digestifs</li>
+          <li>Hypertension</li>
+          <li>Diabète de type 2</li>
+          <li>Anxiété et troubles de l'humeur</li>
+          <li>Problèmes de mémoire</li>
+          <li>Douleurs inflammatoires diffuses</li>
+        </ul>
+      </p>
+      <p>
+        Tandis que le médecin allopathe agit sur les symptômes à l'aide de médicaments, la naturopathie intégrative cherche à remonter aux sources du déséquilibre. Grâce à un dialogue approfondi — un véritable interrogatoire bienveillant — nous prendrons le temps de comprendre et d'ajuster ensemble : 
+        <ol>
+          <li>Votre alimentation</li>
+          <li>Votre environnement</li>
+          <li>Votre condition physique</li> 
+          <li>Vos émotions</li>
+        </ol>
+      </p>
+    </section>
   </div>
 
-  <h1>VITALETHEIA</h1>
-  <p>
-    Le fond précède la forme  / Le temps consacré à la santé sera déduit de celui consacré à la maladie  /  Replacer l'individu au centre de ses besoins essentiels    
-  </p>
-
-  <section id="approche" style="max-width: 750px; margin: 4rem auto; font-size: 1.05rem; line-height: 1.8; text-align: center;">
-  <p>
-    Inspirée à la fois par les courants hygiénistes traditionnels et par les avancées de la médecine fonctionnelle et métabolique, mon approche vise à se concentrer sur la problématique qui vous amène à moi, en mobilisant les items adaptés de ma « boîte à outils » naturopathique.
-  </p>
-  <p>
-    Idéale pour accompagner ou améliorer les troubles chroniques — particulièrement fréquents chez les personnes âgées — cette approche globale s’attache à comprendre la cause profonde du déséquilibre. Parmi les troubles les plus courants dans ce cadre : 
-    <ul style="text-align: left; display: inline-block; margin: 1rem auto;">
-    <li>Fatigue chronique</li>
-    <li>Troubles du sommeil</li>
-    <li>Troubles cutanés</li> 
-    <li>Arthrose</li>
-    <li>Troubles digestifs</li>
-    <li>Hypertension</li>
-    <li>Diabète de type 2</li>
-    <li>Anxiété et troubles de l’humeur</li>
-    <li>Problèmes de mémoire</li>
-    <li>Douleurs inflammatoires diffuses</li>
-  </ul>
-  </p>
-  <p>
-    Tandis que le médecin allopathe agit sur les symptômes à l’aide de médicaments, la naturopathie intégrative cherche à remonter aux sources du déséquilibre. Grâce à un dialogue approfondi — un véritable interrogatoire bienveillant — nous prendrons le temps de comprendre et d'ajuster ensemble : 
-    <li>votre alimentation</li>
-    <li>votre environnement</li>
-    <li>votre condition physique</li> 
-    <li>vos émotions</li>
-   
-  </p>
-</section>
-
+  <script>
+    // Amélioration du menu pour les écrans tactiles
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuContainer = document.querySelector('.menu-container');
+      const menuButton = document.querySelector('.menu-button');
+      
+      // Pour les appareils tactiles, ajouter un événement de clic
+      if ('ontouchstart' in window) {
+        let menuOpen = false;
+        
+        menuButton.addEventListener('click', function() {
+          if (menuOpen) {
+            menuContainer.querySelector('.menu-content').style.display = 'none';
+            menuOpen = false;
+          } else {
+            menuContainer.querySelector('.menu-content').style.display = 'block';
+            menuOpen = true;
+          }
+        });
+        
+        // Fermer le menu en cliquant ailleurs
+        document.addEventListener('click', function(event) {
+          if (!menuContainer.contains(event.target)) {
+            menuContainer.querySelector('.menu-content').style.display = 'none';
+            menuOpen = false;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
