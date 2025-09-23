@@ -51,6 +51,7 @@
     h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 300;
+      font-size: 2.5rem; /* Fallback pour clamp */
       font-size: clamp(2.5rem, 8vw, 4rem);
       letter-spacing: 0.1em;
       margin-top: 3rem;
@@ -121,9 +122,11 @@
       border-radius: 0.5rem;
       cursor: pointer;
       transition: background-color 0.3s;
+      outline: none; /* Pour l'accessibilité */
     }
 
-    .menu-button:hover {
+    .menu-button:hover,
+    .menu-button:focus {
       background-color: rgba(46, 66, 63, 1);
     }
 
@@ -148,11 +151,13 @@
       transition: background-color 0.3s;
     }
 
-    .menu-content a:hover {
+    .menu-content a:hover,
+    .menu-content a:focus {
       background-color: #f0f0f0;
     }
 
-    .menu-container:hover .menu-content {
+    .menu-container:hover .menu-content,
+    .menu-button:focus + .menu-content {
       display: block;
     }
 
@@ -190,6 +195,7 @@
       h1 {
         margin-top: 2rem;
         margin-bottom: 1rem;
+        font-size: 2.2rem; /* Taille fixe pour mobile */
       }
       
       .separator {
@@ -234,19 +240,23 @@
       section {
         font-size: 1rem;
       }
+      
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="menu-container">
-      <button class="menu-button">Menu</button>
-      <div class="menu-content">
-        <a href="#contact">Contact</a>
-        <a href="#apropos">À propos</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#consultation">La consultation</a>
-        <a href="#approche">Mon approche</a>
+      <button class="menu-button" aria-expanded="false" aria-controls="menu-content">Menu</button>
+      <div class="menu-content" id="menu-content" role="menu">
+        <a href="#contact" role="menuitem">Contact</a>
+        <a href="#apropos" role="menuitem">À propos</a>
+        <a href="#tarifs" role="menuitem">Tarifs</a>
+        <a href="#consultation" role="menuitem">La consultation</a>
+        <a href="#approche" role="menuitem">Mon approche</a>
       </div>
     </div>
 
@@ -266,63 +276,76 @@
       </p>
       <p>
         Idéale pour accompagner ou améliorer les troubles chroniques — particulièrement fréquents chez les personnes âgées — cette approche globale s'attache à comprendre la cause profonde du déséquilibre. Parmi les troubles les plus courants dans ce cadre : 
-        <ul>
-          <li>Fatigue chronique</li>
-          <li>Troubles du sommeil</li>
-          <li>Troubles cutanés</li> 
-          <li>Arthrose</li>
-          <li>Troubles digestifs</li>
-          <li>Hypertension</li>
-          <li>Diabète de type 2</li>
-          <li>Anxiété et troubles de l'humeur</li>
-          <li>Problèmes de mémoire</li>
-          <li>Douleurs inflammatoires diffuses</li>
-        </ul>
       </p>
+      <ul>
+        <li>Fatigue chronique</li>
+        <li>Troubles du sommeil</li>
+        <li>Troubles cutanés</li> 
+        <li>Arthrose</li>
+        <li>Troubles digestifs</li>
+        <li>Hypertension</li>
+        <li>Diabète de type 2</li>
+        <li>Anxiété et troubles de l'humeur</li>
+        <li>Problèmes de mémoire</li>
+        <li>Douleurs inflammatoires diffuses</li>
+      </ul>
       <p>
         Tandis que le médecin allopathe agit sur les symptômes à l'aide de médicaments, la naturopathie intégrative cherche à remonter aux sources du déséquilibre. Grâce à un dialogue approfondi — un véritable interrogatoire bienveillant — nous prendrons le temps de comprendre et d'ajuster ensemble : 
-        <ol>
-          <li>Votre alimentation</li>
-          <li>Votre environnement</li>
-          <li>Votre condition physique</li> 
-          <li>Vos émotions</li>
-        </ol>
-      <p>La maladie n’est pas une fatalité.
-         Elle est une conception humaine, une conséquence directe du désordre alimentaire, et du désalignement de notre mode de vie. Nous sommes désaisis de nos corps et de nos esprits.</p>
-      <p> Ainsi, la lecture de vos bilans sanguins réalisée avec l'angle de l'approche intégrative et fonctionelle nous permettra d'autant plus de lever le voile sur les zones physiologiques sur lesquelles se concentrer pour reconstruire les capacités adaptatives du corps.  </p>
-      
       </p>
+      <ol>
+        <li>Votre alimentation</li>
+        <li>Votre environnement</li>
+        <li>Votre condition physique</li> 
+        <li>Vos émotions</li>
+      </ol>
     </section>
   </div>
 
   <script>
-    // Amélioration du menu pour les écrans tactiles
+    // Amélioration du menu pour l'accessibilité
     document.addEventListener('DOMContentLoaded', function() {
       const menuContainer = document.querySelector('.menu-container');
       const menuButton = document.querySelector('.menu-button');
+      const menuContent = document.querySelector('.menu-content');
       
-      // Pour les appareils tactiles, ajouter un événement de clic
-      if ('ontouchstart' in window) {
-        let menuOpen = false;
-        
-        menuButton.addEventListener('click', function() {
-          if (menuOpen) {
-            menuContainer.querySelector('.menu-content').style.display = 'none';
-            menuOpen = false;
-          } else {
-            menuContainer.querySelector('.menu-content').style.display = 'block';
-            menuOpen = true;
+      // Gestion du menu pour l'accessibilité
+      menuButton.addEventListener('click', function() {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        menuContent.style.display = isExpanded ? 'none' : 'block';
+      });
+      
+      // Fermer le menu en cliquant ailleurs
+      document.addEventListener('click', function(event) {
+        if (!menuContainer.contains(event.target)) {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuContent.style.display = 'none';
+        }
+      });
+      
+      // Fermer le menu avec la touche Échap
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuContent.style.display = 'none';
+          menuButton.focus();
+        }
+      });
+      
+      // Navigation au clavier dans le menu
+      const menuItems = menuContent.querySelectorAll('a');
+      const lastMenuItem = menuItems[menuItems.length - 1];
+      
+      menuItems.forEach((item, index) => {
+        item.addEventListener('keydown', function(event) {
+          if (event.key === 'Tab' && !event.shiftKey && index === menuItems.length - 1) {
+            event.preventDefault();
+            menuButton.focus();
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuContent.style.display = 'none';
           }
         });
-        
-        // Fermer le menu en cliquant ailleurs
-        document.addEventListener('click', function(event) {
-          if (!menuContainer.contains(event.target)) {
-            menuContainer.querySelector('.menu-content').style.display = 'none';
-            menuOpen = false;
-          }
-        });
-      }
+      });
     });
   </script>
 </body>
