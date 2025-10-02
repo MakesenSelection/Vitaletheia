@@ -6,12 +6,19 @@
     <title>VITALETHEIA - Naturopathie Intégrative</title>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
-        /* Styles existants conservés et optimisés */
         :root {
             --primary-color: #6A8D73;
+            --primary-dark: #5a7a63;
             --text-color: #2E2E2E;
             --background-color: #FAF9F6;
             --light-gray: #f8f8f8;
+            --accent-color: #8FB996;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
@@ -19,14 +26,53 @@
             color: var(--text-color);
             background-color: var(--background-color);
             line-height: 1.7;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
+        }
+
+        /* Header stylisé avec effet vortex */
+        .page-header {
+            position: relative;
+            text-align: center;
+            padding: 6rem 0 8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+
+        .header-vortex {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FAF9F6'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .site-title {
+            font-size: 4rem;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-subtitle {
+            font-size: 1.5rem;
+            margin: 0;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
         /* Navigation */
@@ -53,45 +99,82 @@
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
         }
 
-        /* Header */
-        .page-header {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            background: linear-gradient(135deg, #6A8D73 0%, #8FB996 100%);
-            color: white;
-            margin-bottom: 3rem;
+        .nav-links a:hover:after {
+            width: 100%;
         }
 
-        .site-title {
-            font-size: 3.5rem;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .site-subtitle {
-            font-size: 1.3rem;
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        /* Sections */
+        /* Sections avec séparations en vortex */
         .section {
-            padding: 3rem 0;
-            border-bottom: 1px solid #E0E0E0;
+            position: relative;
+            padding: 5rem 0;
+        }
+
+        .section-light {
+            background: var(--background-color);
+        }
+
+        .section-gray {
+            background: var(--light-gray);
+        }
+
+        /* Séparateur vortex en haut */
+        .vortex-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23FAF9F6'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+
+        /* Séparateur vortex en bas */
+        .vortex-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23f8f8f8'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 1rem auto;
         }
 
         .card-grid {
@@ -103,25 +186,45 @@
 
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
         .card h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
 
         /* Listes */
         .checklist {
             list-style: none;
             padding: 0;
+            text-align: left;
         }
 
         .checklist li {
-            padding: 0.5rem 0;
+            padding: 0.7rem 0;
             padding-left: 2rem;
             position: relative;
         }
@@ -137,23 +240,43 @@
         /* CTA */
         .cta-section {
             text-align: center;
-            padding: 4rem 0;
-            background: var(--light-gray);
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-vortex {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%236A8D73'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
         }
 
         .btn {
             display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1.2rem 2.5rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 1rem;
         }
 
         .btn:hover {
-            background: #5a7a63;
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         /* Footer */
@@ -161,17 +284,71 @@
             background: var(--text-color);
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .footer-vortex {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%232E2E2E'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
         }
 
         .disclaimer {
             font-size: 0.9rem;
             opacity: 0.8;
             margin-top: 2rem;
-            padding: 1rem;
+            padding: 1.5rem;
             background: rgba(255,255,255,0.1);
-            border-radius: 5px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Process steps */
+        .process-step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(106, 141, 115, 0.3);
+        }
+
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Animation subtile */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
@@ -188,16 +365,18 @@
         </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Header stylisé avec vortex -->
     <header class="page-header">
         <div class="container">
-            <h1 class="site-title">VITALETHEIA</h1>
+            <h1 class="site-title floating">VITALETHEIA</h1>
             <p class="site-subtitle">Naturopathie Intégrative & Prévention Santé</p>
         </div>
+        <div class="header-vortex"></div>
     </header>
 
     <!-- Section Approche -->
-    <section id="approche" class="section">
+    <section id="approche" class="section section-light">
+        <div class="vortex-top"></div>
         <div class="container">
             <h2 class="section-title">Une Approche Globale et Intégrative</h2>
             
@@ -214,113 +393,4 @@
                 
                 <div class="card">
                     <h3>🤝 Participative</h3>
-                    <p>Vous êtes acteur de votre santé. Je vous donne les clés pour devenir autonome.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Pourquoi Consulter -->
-    <section id="pourquoi" class="section" style="background: var(--light-gray);">
-        <div class="container">
-            <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <h3>💚 Préserver sa santé</h3>
-                    <ul class="checklist">
-                        <li>Renforcer son immunité</li>
-                        <li>Optimiser son alimentation</li>
-                        <li>Gérer son stress</li>
-                        <li>Améliorer son sommeil</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🔄 Accompagner les transitions</h3>
-                    <ul class="checklist">
-                        <li>Grossesse & postnatal</li>
-                        <li>Ménopause</li>
-                        <li>Périodes de stress</li>
-                        <li>Changements de saison</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>⚖️ Soutenir l'équilibre</h3>
-                    <ul class="checklist">
-                        <li>Fatigue persistante</li>
-                        <li>Troubles digestifs</li>
-                        <li>Gestion du poids</li>
-                        <li>Équilibre émotionnel</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p><em>En complément de votre suivi médical, jamais en remplacement</em></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Déroulé Consultation -->
-    <section id="consultation" class="section">
-        <div class="container">
-            <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem;">
-                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
-                    <div>
-                        <h3>Bilan Initial Complet (1h30)</h3>
-                        <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem;">
-                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
-                    <div>
-                        <h3>Programme Personnalisé</h3>
-                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie.</p>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;">
-                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
-                    <div>
-                        <h3>Suivi & Ajustements (45min-1h)</h3>
-                        <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 style="margin-bottom: 1rem;">Prêt à Devenir Acteur de Votre Santé ?</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Prenez rendez-vous pour une première consultation</p>
-            <a href="#contact" class="btn">Prendre Rendez-vous</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div style="margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 1rem;">VITALETHEIA</h3>
-                <p>Naturopathie Intégrative & Prévention Santé</p>
-            </div>
-            
-            <div class="disclaimer">
-                <p><strong>Mention importante :</strong> La naturopathie est une approche complémentaire qui ne se substitue pas à la médecine conventionnelle. Je ne pose aucun diagnostic médical et ne modifie jamais les traitements en cours. Toute pathologie doit être suivie par un médecin.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    <p>Vous êtes acteur
