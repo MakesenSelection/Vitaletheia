@@ -1,352 +1,326 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VITALETHEIA - Approche intégrative de la santé</title>
-  <!-- Belleza via Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
-  <!-- Versailles doit être ajoutée en self-host si tu as le fichier -->
-  <style>
-    @font-face {
-      font-family: 'Versailles';
-      src: url('/fonts/Versailles.woff2') format('woff2'),
-           url('/fonts/Versailles.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    
-    body {
-      font-family: 'Belleza', sans-serif;
-      color: #2E2E2E;
-      background-color: #FAF9F6;
-      line-height: 1.8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALETHEIA - Naturopathie Intégrative</title>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <style>
+        /* Styles existants conservés et optimisés */
+        :root {
+            --primary-color: #6A8D73;
+            --text-color: #2E2E2E;
+            --background-color: #FAF9F6;
+            --light-gray: #f8f8f8;
+        }
+        
+        body {
+            font-family: 'Belleza', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    .approche {
-      margin: 5rem auto;
-      padding: 2rem 0;
-      border-top: 2px solid #6A8D73;
-      border-bottom: 2px solid #6A8D73;
-    }
+        /* Navigation */
+        .main-nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Styles pour le nouvel en-tête */
-    .page-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #E0E0E0;
-      text-align: center;
-    }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    .site-title {
-      font-family: 'Versailles', serif;
-      font-size: 3rem;
-      font-weight: normal;
-      letter-spacing: 3px;
-      margin: 0 0 0.5rem 0;
-      color: #2E2E2E;
-      text-transform: uppercase;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    .site-subtitle {
-      font-family: 'Belleza', sans-serif;
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #6A8D73;
-      margin: 0;
-      letter-spacing: 0.5px;
-    }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-    .section-title {
-      font-family: 'Versailles', serif;
-      font-size: 2.3rem;
-      margin-bottom: 2rem;
-      color: #2E2E2E;
-      position: relative;
-      letter-spacing: 1px;
-      text-align: center;
-    }
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            background: linear-gradient(135deg, #6A8D73 0%, #8FB996 100%);
+            color: white;
+            margin-bottom: 3rem;
+        }
 
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: #6A8D73;
-      margin: 0.5rem auto;
-    }
+        .site-title {
+            font-size: 3.5rem;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
 
-    .troubles {
-      text-align: left;
-      display: inline-block;
-      margin: 2rem auto;
-      padding-left: 1.2rem;
-      list-style: none;
-    }
+        .site-subtitle {
+            font-size: 1.3rem;
+            margin: 0;
+            opacity: 0.9;
+        }
 
-    .troubles li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.7rem;
-      font-size: 1.05rem;
-    }
+        /* Sections */
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
 
-    .troubles li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: #6A8D73;
-      font-weight: bold;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
 
-    /* Styles pour le texte justifié */
-    .justified-text {
-      text-align: justify;
-      margin-bottom: 1.5rem;
-    }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
 
-    /* Styles pour les sous-titres */
-    .subsection-title {
-      font-family: 'Belleza', sans-serif;
-      font-size: 1.5rem;
-      margin: 2.5rem 0 1.5rem 0;
-      color: #6A8D73;
-      text-align: left;
-    }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
 
-    /* Styles pour les listes */
-    .custom-list {
-      text-align: left;
-      margin: 1.5rem 0;
-      padding-left: 1.5rem;
-    }
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
-    .custom-list li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 0.5rem;
-    }
+        /* Listes */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
 
-    .custom-list li::marker {
-      color: #6A8D73;
-    }
+        .checklist li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
 
-    /* Styles pour les citations */
-    .quote {
-      font-style: italic;
-      margin: 2rem 0;
-      padding: 1rem 1.5rem;
-      border-left: 3px solid #6A8D73;
-      background-color: #f8f8f8;
-      text-align: left;
-    }
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
 
-    .quote-author {
-      text-align: right;
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: #6A8D73;
-    }
-  </style>
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a7a63;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-  <section id="approche" class="approche">
-    <div class="container">
-      <!-- En-tête principal -->
-      <header class="page-header">
-        <h1 class="site-title">VITALETHEIA</h1>
-        <p class="site-subtitle">Approche intégrative, préventive et éducative de la santé</p>
-      </header>
-      
-      <h2 class="section-title">Mon approche</h2>
-      
-      <p class="justified-text">
-        Inspirée à la fois par les courants hygiénistes traditionnels et par les avancées de la médecine fonctionnelle et métabolique, mon approche vise à se concentrer sur la problématique qui vous amène à moi, en mobilisant les items adaptés de ma « boîte à outils » naturopathique.
-      </p>
-      
-      <h3 class="subsection-title">Approche inspirée et inspirante</h3>
-      
-      <p class="justified-text">
-        Depuis plusieurs décennies déjà, une nouvelle approche de santé a émergé : une médecine dite "personnalisée", préventive, prédictive et participative. On a aussi entendu parlé d'approche « intégrée » ou « intégrative ». Cela signifie « le meilleur de la médecine classique et des thérapies alternatives pour lesquelles nous disposons de preuves scientifiques et de garanties relatives sur leur sécurité » (A.Weil & R; Snyderman, Archives of Internation Medecine).
-      </p>
-      
-      <p class="justified-text">
-        La démarche naturopathique dans laquelle je m'inscris étend largement cette définition de la médecine intégrée (L. Pélissier-Simard et M. Xhignesse), à savoir :
-      </p>
-      
-      <ul class="custom-list">
-        <li>elle intègre les meilleurs soins de la médecine scientifique occidentale et ceux des approches complémentaires,</li>
-        <li>elle repose sur des données probantes quant à l'efficacité et à l'innocuité des méthodes proposées,</li>
-        <li>elle s'attarde à la prévention et au maintien de la santé en s'intéressant aux différentes facettes du mode de vie : alimentation, activité physique, gestion du stress et bien-être émotionnel,</li>
-        <li>elle considère le patient comme un être unique et entier, dans ses dimensions sociales, psychologiques, spirituelles et communautaires autant que biologiques et corporelles,</li>
-        <li>elle considère que le patient est un acteur important dans la gestion de sa santé et des soins qu'il reçoit,</li>
-        <li>elle met l'accent sur la relation thérapeutique,</li>
-        <li>elle se préoccupe du soulagement et du soutien autant que de la guérison,</li>
-        <li>elle s'attarde à la recherche et à la compréhension des processus de santé et de guérison ainsi qu'aux moyens de faciliter ces derniers,</li>
-        <li>elle encourage la compréhension de la culture du patient et de ses croyances pour favoriser la guérison,</li>
-        <li>elle recherche et enlève les barrières qui peuvent bloquer la réponse innée de guérison du corps,</li>
-        <li>elle emploie des interventions simples et naturelles avant de passer à celles qui sont plus coûteuses et interventionnistes,</li>
-        <li>elle voit la compassion comme toujours utile,</li>
-        <li>elle accepte que la santé et la guérison soient propres à chacun et puissent différer chez deux personnes atteintes de la même maladie,</li>
-        <li>elle encourage les soignants à explorer leur propre équilibre de santé, ce qui leur permettra de mieux intervenir en ce sens auprès de leurs patients,</li>
-        <li>elle exige des fournisseurs de soins qu'ils agissent en tant qu'éducateurs,</li>
-        <li>elle encourage le travail de collaboration, non seulement avec le patient, mais aussi avec une équipe interdisciplinaire pour améliorer la prestation des soins.</li>
-      </ul>
-      
-      <p class="justified-text">
-        Il ne s'agit donc pas d'une approche pyramidale mais bien d'une approche fondée sur l'intelligence du groupe et centrée sur le respect, l'écoute, le bien-être et la guérison du patient/client.
-      </p>
-      
-      <p class="justified-text">
-        En accord avec un recul ancestral et un constat actuel de plus en plus éclatant pour beaucoup : l'être humain n'est pas seulement un assemblage d'organes avec d'un côté le corps et de l'autre l'esprit, il doit être envisagé dans sa globalité, car tout est en lien ; et le Tout n'est pas égal à la somme des parties !
-      </p>
-      
-      <p class="justified-text">
-        Cette démarche globale dite « holistique » représente le passé, le présent, et le futur, plus que jamais. Elle est de plus en plus populaire malgré les vents de face d'institutions variées dévoyées et des médias de puissances d'argent. Les français sont toujours de plus en plus à faire appel à des médecines dites non conventionnelles ou complémentaires.
-        Il y a la médecine de la maladie et il y a la médecine de la santé, qui nous dit comment gagner de l'espérance de vie en bonne santé - quel est l'intérêt de vivre plus longtemps avec un corps dysfonctionnel et un cerveau qui tourne au ralenti ?
-      </p>
-      
-      <p class="justified-text">
-        C'est toute l'ambition de cette approche naturopathique actualisée et rénovée, une « naturopathie 2.0 ».
-      </p>
-      
-      <p class="justified-text">
-        Cette approche qui intègre les dernières avancées biologiques et qui met en lien diverses pratiques de santé peut nous aider à rester en bonne santé le plus longtemps possible par la prévention des maladies, la prédiction de certains facteurs de risques, notamment génétiques, la personnalisation de la prise en charge et la participation du client, qui devient véritablement acteur de sa santé.
-      </p>
-      
-      <p class="justified-text">
-        La santé aujourd'hui n'est pas un dû, elle se gagne par la prise de conscience et la mise en oeuvre de nouvelles habitudes. Aucun cours à l'école ne nous a appris ce que voulait dire la santé et quels étaient ses enjeux. Cela passe donc nécessairement par un nouvel apprentissage et une nouvelle praxis, surtout à un moment historique où la toxicité émane de partout. Les scandales explosent les uns après les autres, et ce n'est pas près de s'arrêter.
-        La bonne nouvelle, c'est que de nombreux gestes peuvent nous éloigner de cette toxicité, et de nombreux gestes peuvent nous rapprocher la santé.
-      </p>
-      
-      <h3 class="subsection-title">Le contexte sanitaire actuel</h3>
-      
-      <p class="justified-text">
-        Le niveau de santé global s'est considérablement dégradé, ainsi que le système sensé le réparer :
-      </p>
-      
-      <ul class="custom-list">
-        <li>système médical saturé</li>
-        <li>approche purement symptomatique</li>
-        <li>sur-médication croissante : un fardeau pour un système en naufrage</li>
-        <li>des maladies chroniques qui ne cessent de pulluler malgré des budgets astronomiques dédiés à la « santé ».</li>
-      </ul>
-      
-      <p class="justified-text">
-        C'est à ses défis que doit répondre la naturopathie moderne en offrant :
-      </p>
-      
-      <ul class="custom-list">
-        <li>une brèche à ouvrir au niveau des déserts médicaux</li>
-        <li>des pistes complémentaires aux médecins, pour creuser le sillon du causal et du global au lieu du symptôme seul</li>
-        <li>une approche personnalisée en identifiant les déséquilibres sous-jacents</li>
-        <li>une visée éducative pour que le patient se ré-approprie sa santé.</li>
-      </ul>
-      
-      <h3 class="subsection-title">Le déroulé d'une prise en charge</h3>
-      
-      <p class="justified-text">
-        Tandis que le médecin allopathe agit sur les symptômes à l'aide de médicaments, le naturopathe bien formé, engagé et raisonné cherche à remonter aux sources du déséquilibre, et ce, en se basant notamment sur les fondements hippocratiques authentiques.
-        Grâce à un dialogue approfondi, en soutien d'un questionnaire rempli par vos soins avant la consultation, nous prenons le temps de comprendre ensemble : l'alimentation, la biologie, le sommeil, le stress, l'activité physique, l'environnement général et les émotions afin d'agir sur les causes supposées du trouble.
-      </p>
-      
-      <p class="justified-text">
-        Selon les besoins, des tests de terrain ou des bilans spécifiques peuvent être utilisés pour mieux comprendre les déséquilibres sous-jacents. La première séance dure généralement entre 1h et 1h30, afin de permettre un échange approfondi.
-        À la fin de cette première consultation, le naturopathe propose un programme personnalisé, qui peut inclure des recommandations en nutrition, des plantes médicinales, des exercices de relaxation et des conseils pour améliorer l'hygiène de vie. Les consultations suivantes, souvent espacées de 3 à 6 semaines, durent environ 45min à 1h. Elles permettent de suivre l'évolution du client, d'ajuster les recommandations et d'apporter de nouveaux conseils en fonction des progrès réalisés.
-      </p>
-      
-      <p class="justified-text">
-        Contrairement aux idées reçues, la naturopathie ne se substitue pas à la médecine conventionnelle. Elle intervient en complément, dans une démarche intégrative, pour optimiser le terrain et soutenir les processus naturels d'autorégulation du corps. Un naturopathe ne pose pas de diagnostic médical et ne remplace en aucun cas un avis médical. Son rôle est d'accompagner les personnes dans une démarche préventive et d'optimisation de leur bien-être.
-        Dans un monde où les maladies chroniques explosent et où de plus en plus de personnes cherchent des alternatives naturelles, le naturopathe peut se poser en réel catalyseur, et il doit le faire.
-      </p>
-      
-      <h3 class="subsection-title">Pourquoi consulter ?</h3>
-      
-      <p class="justified-text">
-        Quand tout va bien, pour aider à conserver une santé et une vitalité optimale : alimentation saine, renforcer ses défenses immunitaires, prévenir des maux saisonniers, maintenir une santé de fer jusqu'à vos vieux jours.
-      </p>
-      
-      <p class="justified-text">
-        Pour accompagner ou améliorer les troubles chroniques — particulièrement fréquents chez les personnes âgées — cette approche globale s'attache à comprendre la cause profonde du déséquilibre. Parmi les troubles les plus courants dans ce cadre :
-      </p>
-      
-      <ul class="custom-list">
-        <li>Troubles digestifs</li>
-        <li>Fatigue chronique</li>
-        <li>Troubles liés aux cycles féminins</li>
-        <li>Troubles de l'humeur, émotionnels ou cognitifs</li>
-        <li>Douleurs inflammatoires diffuses</li>
-        <li>Troubles du sommeil</li>
-        <li>Arthrose</li>
-        <li>Hypertension</li>
-        <li>Diabète de type 2</li>
-      </ul>
-      
-      <p class="justified-text">
-        Pour accompagner et soutenir les grandes étapes de la vie : grossesse, ménopause, périodes d'examens…
-      </p>
-      
-      <p class="justified-text">
-        La maladie ne fait pas partie de la nature, elle est une conséquence de notre sortie d'un ordre naturel. Cet ordre sera impossible à retrouver dans son intégralité, néanmoins de nombreux réflexes peuvent y tendre largement, c'est là que le naturopathe avisé intervient pour accompagner ces pathologies, de concert avec le médecin dans le meilleur des cas, si ce dernier est ouvert aux approches complémentaires, sinon avec d'autres thérapeutes qui pourront aussi aider la personne. Le naturopathe peut ici notamment améliorer la qualité de vie quand la guérison n'est pas possible.
-      </p>
-      
-      <div class="quote">
-        « La santé est l'ordre naturel des choses ».
-      </div>
-      
-      <div class="quote">
-        « Nos priorités en matière de remboursement sont totalement rétrogrades. Nous payons volontiers des médicaments, des procédures invasives, des tests de diagnostic. Nous ne payons pas les professionnels de santé pour s'asseoir avec les patients et leur parler de l'alimentation ou leur enseigner des exercices de respiration. Cela doit changer. »
-        <div class="quote-author">Andrew Weil</div>
-      </div>
-      
-      <h3 class="subsection-title">Les avancées de la reconnaissance de la profession</h3>
-      
-      <p class="justified-text">
-        Au niveau français, européen et mondial :
-        En France, notons qu'en 2012, le Centre d'analyse stratégique, institution d'expertise et d'aide à la décision qui a pour mission d'éclairer le gouvernement dans la définition et la mise en œuvre de ses orientations stratégiques, notamment en matière sociale, a remis au Premier Ministre une note d'analyse intitulée « Quelle réponse des pouvoirs publics à l'engouement pour les médecines non conventionnelles ? ». Dans celle-ci, il recommandait notamment au Premier Ministre de s'assurer de l'innocuité des techniques non conventionnelles, d'encadrer la pratique et la formation des thérapeutes et d'organiser l'intégration des médecines non conventionnelles au système de santé, « lorsqu'elles peuvent contribuer, en complément des soins conventionnels, à une prise en charge des patients plus complète. »[15] f
-      </p>
-      
-      <p class="justified-text">
-        Parallèlement, à l'échelle européenne, une résolution datant du 29 mai 1997 se prononçait déjà en faveur de l'intégration des « médecines non conventionnelles ». Adoptée par le Parlement européen après un travail de fond initié par le député européen Paul Lannoye au sein de la Commission Santé, elle avait alors placé l'ostéopathie au cœur du débat politique, et abouti, en France, à la réglementation de l'activité des ostéopathes. Mais la naturopathie était, elle aussi, visée par cette résolution.
-      </p>
-      
-      <div class="quote">
-        Je compare souvent la médecine intégrative à un iceberg : le patient vient avec son symptôme ou sa maladie, la partie émergée, celle que l'on voit, par exemple un dysfonctionnement chronique répétitif comme un processus inflammatoire ou dégénératif. En médecine classique, on va être très efficace pour soigner cette partie visible. Cependant je pense que l'on peut aller plus loin dans la prise en charge du patient en cherchant à savoir pourquoi l'iceberg est apparu, en investiguant la partie immergée. Ainsi, en prenant l'iceberg dans son ensemble, en traitant le patient en tant qu'être unique et entier avec toutes ses dimensions physique, sociale, nutritionnelle, psychologique, on peut remonter à la cause et travailler sur le terrain. Les patients sont en demande de cette médecine qui prend le temps, qui écoute, d'autant plus dans une société où beaucoup de pathologies sont liées au stress.
-        <div class="quote-author">Dr Carine Devred</div>
-      </div>
-      
-      <h3 class="subsection-title">LA NATUROPATHIE au sens classique</h3>
-      
-      <p class="justified-text">
-        Une pratique ayant comme fondement le holisme et le vitalisme. Repose sur sept techniques : la nutrition clinique, la nutrition appliquée, la phytothérapie, les conseils en hygiène de vie, l'hydrothérapie, l'homéopathie et l'exercice physique sous diverses formes.
-      </p>
-      
-      <p class="justified-text">
-        Idéale pour accompagner ou améliorer les troubles chroniques — particulièrement fréquents chez les personnes âgées — cette approche globale s'attache à comprendre la cause profonde du déséquilibre. Parmi les troubles les plus courants dans ce cadre :
-      </p>
-      
-      <ul class="troubles">
-        <li>Fatigue chronique</li>
-        <li>Troubles du sommeil</li>
-        <li>Arthrose</li>
-        <li>Troubles digestifs</li>
-        <li>Hypertension</li>
-        <li>Diabète de type 2</li>
-        <li>Anxiété ou troubles de l'humeur</li>
-        <li>Problèmes de mémoire</li>
-        <li>Douleurs inflammatoires diffuses</li>
-      </ul>
-      
-      <p class="justified-text">
-        Tandis que le médecin allopathe agit sur les symptômes à l'aide de médicaments, la naturopathie intégrative cherche à remonter aux sources du déséquilibre. Grâce à un dialogue approfondi — un véritable interrogatoire bienveillant — nous prendrons le temps de comprendre ensemble : votre contexte de vie, vos habitudes, votre environnement… afin d'agir sur les causes réelles et durables du trouble.
-      </p>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#approche">Mon Approche</a></li>
+                <li><a href="#pourquoi">Pourquoi Consulter</a></li>
+                <li><a href="#consultation">Déroulé</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="site-title">VITALETHEIA</h1>
+            <p class="site-subtitle">Naturopathie Intégrative & Prévention Santé</p>
+        </div>
+    </header>
+
+    <!-- Section Approche -->
+    <section id="approche" class="section">
+        <div class="container">
+            <h2 class="section-title">Une Approche Globale et Intégrative</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🧬 Personnalisée</h3>
+                    <p>Un accompagnement sur mesure qui considère votre unicité biologique, psychologique et sociale.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🛡️ Préventive</h3>
+                    <p>Agir en amont pour maintenir un état de santé optimal et prévenir les déséquilibres.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🤝 Participative</h3>
+                    <p>Vous êtes acteur de votre santé. Je vous donne les clés pour devenir autonome.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi Consulter -->
+    <section id="pourquoi" class="section" style="background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>💚 Préserver sa santé</h3>
+                    <ul class="checklist">
+                        <li>Renforcer son immunité</li>
+                        <li>Optimiser son alimentation</li>
+                        <li>Gérer son stress</li>
+                        <li>Améliorer son sommeil</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>🔄 Accompagner les transitions</h3>
+                    <ul class="checklist">
+                        <li>Grossesse & postnatal</li>
+                        <li>Ménopause</li>
+                        <li>Périodes de stress</li>
+                        <li>Changements de saison</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>⚖️ Soutenir l'équilibre</h3>
+                    <ul class="checklist">
+                        <li>Fatigue persistante</li>
+                        <li>Troubles digestifs</li>
+                        <li>Gestion du poids</li>
+                        <li>Équilibre émotionnel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><em>En complément de votre suivi médical, jamais en remplacement</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Déroulé Consultation -->
+    <section id="consultation" class="section">
+        <div class="container">
+            <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem;">
+                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+                    <div>
+                        <h3>Bilan Initial Complet (1h30)</h3>
+                        <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem;">
+                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
+                    <div>
+                        <h3>Programme Personnalisé</h3>
+                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie.</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;">
+                    <div style="background: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
+                    <div>
+                        <h3>Suivi & Ajustements (45min-1h)</h3>
+                        <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">Prêt à Devenir Acteur de Votre Santé ?</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Prenez rendez-vous pour une première consultation</p>
+            <a href="#contact" class="btn">Prendre Rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">VITALETHEIA</h3>
+                <p>Naturopathie Intégrative & Prévention Santé</p>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Mention importante :</strong> La naturopathie est une approche complémentaire qui ne se substitue pas à la médecine conventionnelle. Je ne pose aucun diagnostic médical et ne modifie jamais les traitements en cours. Toute pathologie doit être suivie par un médecin.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
