@@ -7,12 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #6A8D73;
-            --primary-dark: #5a7a63;
-            --text-color: #2E2E2E;
+            --primary-color: #f4e9a3;
+            --text-color: #ffffff;
             --background-color: #ABBAC4;
-            --light-gray: #f8f8f8;
-            --accent-color: #8FB996;
+            --accent-color: #545454;
         }
         
         * {
@@ -35,33 +33,15 @@
             padding: 0 2rem;
         }
 
-        /* Header stylisé avec effet vortex */
+        /* Header stylisé */
         .page-header {
             position: relative;
             text-align: center;
-            padding: 6rem 0 10rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            padding: 6rem 0 8rem;
+            background: var(--background-color);
             color: white;
             margin-bottom: 0;
             overflow: hidden;
-        }
-
-        .header-vortex {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FAF9F6'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
-            animation: vortex-move 20s ease-in-out infinite;
-        }
-
-        @keyframes vortex-move {
-            0% { transform: translateX(0px); }
-            50% { transform: translateX(-10px); }
-            100% { transform: translateX(0px); }
         }
 
         .site-title {
@@ -70,7 +50,7 @@
             margin: 0 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: var(--primary-color);
             position: relative;
             z-index: 2;
         }
@@ -81,20 +61,23 @@
             opacity: 0.9;
             position: relative;
             z-index: 2;
+            color: var(--text-color);
         }
 
         .practitioner-info {
             margin-top: 0.5rem;
             font-size: 1.1rem;
+            color: var(--text-color);
         }
 
         .practitioner-title {
             margin-top: 0.2rem;
             font-size: 1.2rem;
+            color: var(--text-color);
         }
 
         .spn-link {
-            color: white;
+            color: var(--primary-color);
             text-decoration: underline;
             transition: all 0.3s;
             position: relative;
@@ -102,7 +85,7 @@
         }
 
         .spn-link:hover {
-            color: #e8f5e9;
+            color: #ffffff;
             text-decoration: none;
         }
 
@@ -129,9 +112,8 @@
 
         /* Navigation */
         .main-nav {
-            background: white;
+            background: var(--accent-color);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -173,51 +155,33 @@
             width: 100%;
         }
 
-        /* Sections avec séparations en vortex */
+        /* Séparations personnalisées */
         .section {
             position: relative;
             padding: 5rem 0;
         }
 
-        .section-light {
-            background: var(--background-color);
-        }
-
-        .section-gray {
-            background: var(--light-gray);
-        }
-
-        /* Séparateur vortex en haut - VISIBLE */
-        .vortex-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23f8f8f8'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transform: rotate(180deg);
-        }
-
-        .section-light .vortex-top {
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23FAF9F6'%3E%3C/path%3E%3C/svg%3E");
-        }
-
-        /* Séparateur vortex en bas - VISIBLE */
-        .vortex-bottom {
+        .custom-divider {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23FAF9F6'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
+            height: 30px;
+            overflow: hidden;
         }
 
-        .section-gray .vortex-bottom {
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%23f8f8f8'%3E%3C/path%3E%3C/svg%3E");
+        .custom-divider svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .divider-top {
+            top: 0;
+            bottom: auto;
+            transform: rotate(180deg);
         }
 
         .section-title {
@@ -246,15 +210,15 @@
         }
 
         .modern-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(106, 141, 115, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .modern-card:before {
@@ -264,7 +228,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(90deg, var(--primary-color), transparent);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -273,6 +237,7 @@
         .modern-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .modern-card:hover:before {
@@ -308,23 +273,11 @@
 
         /* Footer */
         .footer {
-            background: var(--text-color);
+            background: var(--accent-color);
             color: white;
             text-align: center;
             padding: 3rem 0 1rem;
             position: relative;
-        }
-
-        .footer-vortex {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z' fill='%232E2E2E'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transform: rotate(180deg);
         }
 
         .disclaimer {
@@ -351,7 +304,7 @@
 
         .step-number {
             background: var(--primary-color);
-            color: white;
+            color: var(--accent-color);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -360,7 +313,7 @@
             justify-content: center;
             font-weight: bold;
             font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(106, 141, 115, 0.3);
+            box-shadow: 0 5px 15px rgba(244, 233, 163, 0.3);
         }
 
         .step-content h3 {
@@ -380,14 +333,16 @@
         .contact-item {
             text-align: center;
             padding: 2rem;
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .contact-item h3 {
@@ -403,12 +358,12 @@
             display: block;
             padding: 0.5rem 1rem;
             border-radius: 5px;
-            background: rgba(106, 141, 115, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .contact-link:hover {
             color: var(--primary-color);
-            background: rgba(106, 141, 115, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Blog section */
@@ -420,15 +375,17 @@
         }
 
         .blog-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .blog-card:hover {
             transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .blog-content {
@@ -448,7 +405,7 @@
         }
 
         .blog-excerpt {
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1rem;
         }
 
@@ -473,14 +430,15 @@
         }
 
         .pricing-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .pricing-card:before {
@@ -500,11 +458,12 @@
 
         .pricing-card.featured:before {
             height: 7px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            background: linear-gradient(135deg, var(--primary-color), rgba(255, 255, 255, 0.5));
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .pricing-card.featured:hover {
@@ -520,7 +479,7 @@
 
         .price-duration {
             font-size: 1rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .pricing-features {
@@ -561,7 +520,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color);
             text-decoration: underline;
         }
 
@@ -571,7 +530,7 @@
 
         .footer-section h4 {
             margin-bottom: 1rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .footer-title {
@@ -580,12 +539,35 @@
             margin: 0 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 3px;
+            color: var(--primary-color);
         }
 
         .footer-subtitle {
             font-size: 1.2rem;
             margin: 0;
             opacity: 0.9;
+            color: var(--text-color);
+        }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -604,7 +586,7 @@
         </div>
     </nav>
 
-    <!-- Header stylisé avec vortex -->
+    <!-- Header stylisé -->
     <header class="page-header">
         <div class="container">
             <h1 class="site-title">VITALÉTHÉIA</h1>
@@ -620,12 +602,23 @@
                 </span>
             </p>
         </div>
-        <div class="header-vortex"></div>
+        
+        <!-- Séparation personnalisée -->
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </header>
 
     <!-- Section Approche -->
-    <section id="approche" class="section section-light">
-        <div class="vortex-top"></div>
+    <section id="approche" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Une Approche Globale et Intégrative</h2>
             
@@ -650,12 +643,22 @@
                 <p style="font-size: 1.2rem;"><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Section Pourquoi Consulter -->
-    <section id="pourquoi" class="section section-gray">
-        <div class="vortex-top"></div>
+    <section id="pourquoi" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
             
@@ -695,12 +698,22 @@
                 <p style="font-style: italic; font-size: 1.1rem;"><em>En complément de votre suivi médical, jamais en remplacement</em></p>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Section La Consultation -->
-    <section id="consultation" class="section section-light">
-        <div class="vortex-top"></div>
+    <section id="consultation" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
             
@@ -708,7 +721,7 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Bilan Initial Complet (90-120min)</h3>
+                        <h3>Bilan Initial Complet (1h30)</h3>
                         <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
                     </div>
                 </div>
@@ -717,26 +730,35 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Programme Personnalisé</h3>
-                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. 
-                        <br>Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement. Remise sous 72h d'un compte-rendu personnalisé par email.</br></p>
+                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement.</p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Suivi & Ajustements (45-60min)</h3>
+                        <h3>Suivi & Ajustements (45min-1h)</h3>
                         <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Section Tarifs -->
-    <section id="tarifs" class="section section-gray">
-        <div class="vortex-top"></div>
+    <section id="tarifs" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Tarifs & Prestations</h2>
             
@@ -786,12 +808,22 @@
                 <p style="font-style: italic;">Certaines mutuelles remboursent partiellement les consultations de naturopathie. Renseignez-vous auprès de votre organisme.</p>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Section Blog -->
-    <section id="blog" class="section section-light">
-        <div class="vortex-top"></div>
+    <section id="blog" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Blog & Actualités</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -801,29 +833,28 @@
             <div class="blog-preview">
                 <div class="blog-card">
                     <div class="blog-content">
-                        <div class="blog-date">1er octobre 2025</div>
-                        <h3 class="blog-title">Naturopathie et Science : Pourquoi la Guerre des Médecines est un Leurre</h3>
-                        <p class="blog-excerpt">Et si le débat entre médecine conventionnelle et naturopathie était tout simplement stérile ? Alors que les articles à charge se multiplient dans les médias...</p>
-                        <a href="article01.html" class="blog-link">Lire l'article →</a>
+                        <div class="blog-date">15 mars 2023</div>
+                        <h3 class="blog-title">Les bienfaits des plantes adaptogènes contre le stress</h3>
+                        <p class="blog-excerpt">Découvrez comment les plantes adaptogènes peuvent vous aider à mieux gérer le stress au quotidien...</p>
+                        <a href="#" class="blog-link">Lire l'article →</a>
                     </div>
                 </div>
                 
-             <div class="blog-card">
-                <div class="blog-content">
-                    <div class="blog-date">3 octobre 2025</div>
-                    <h3 class="blog-title">Communiqué de Presse de l'OMNES suite à l'acharnement médiatique</h3>
-                    <p class="blog-excerpt">À la suite de la promotion du livre « Naturopathie l'imposture scientifique » et de sa reprise médiatique,...</p>
-        <a href="https://www.omnes.fr/lomnes/presse-2/revue-de-presse/view/la-naturopathie-stop-aux-amalgames-et-aux-cliches" class="blog-link">Lire l'article →</a>
-    </div>
-</div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-date">28 février 2023</div>
+                        <h3 class="blog-title">5 conseils pour renforcer son immunité naturellement</h3>
+                        <p class="blog-excerpt">Des habitudes simples à adopter pour soutenir votre système immunitaire tout au long de l'année...</p>
+                        <a href="#" class="blog-link">Lire l'article →</a>
+                    </div>
                 </div>
                 
                 <div class="blog-card">
                     <div class="blog-content">
                         <div class="blog-date">12 février 2023</div>
                         <h3 class="blog-title">L'importance du microbiote intestinal pour la santé globale</h3>
-                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être, selon la méthode GAPS...</p>
-                        <a href="articlemicrobiote.html" class="blog-link">Lire l'article →</a>
+                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être...</p>
+                        <a href="#" class="blog-link">Lire l'article →</a>
                     </div>
                 </div>
             </div>
@@ -832,12 +863,22 @@
                 <a href="#" class="btn">Voir tous les articles</a>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="section section-gray">
-        <div class="vortex-top"></div>
+    <section id="contact" class="section">
+        <div class="custom-divider divider-top">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
+            </svg>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">Contact</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -856,13 +897,18 @@
                 </div>
             </div>
         </div>
-        <div class="vortex-bottom"></div>
+        
+        <!-- Dernière séparation avant le footer -->
+        <div class="custom-divider">
+            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
+                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
+            </svg>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-vortex"></div>
-        <div class="container" style="position: relative; z-index: 2; padding-top: 2rem;">
+        <div class="container">
             <div class="footer-section">
                 <h1 class="footer-title">VITALÉTHÉIA</h1>
                 <p class="footer-subtitle">Naturopathie Intégrative & Prévention Santé</p>
