@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITALÉTHÉIA - Naturopathie Intégrative</title>
+    <title>VITALÉTHÉIA - Naturopathie Scientifique et Intégrative</title>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,6 +11,7 @@
             --text-color: #ffffff;
             --background-color: #ABBAC4;
             --accent-color: #545454;
+            --line-color: #ffffff;
         }
         
         * {
@@ -155,7 +156,7 @@
             width: 100%;
         }
 
-        /* Séparations personnalisées */
+        /* Séparations personnalisées style carte de visite */
         .section {
             position: relative;
             padding: 5rem 0;
@@ -182,6 +183,27 @@
             top: 0;
             bottom: auto;
             transform: rotate(180deg);
+        }
+
+        /* Style de ligne inspiré de la carte de visite */
+        .simple-line {
+            width: 80%;
+            height: 2px;
+            background: var(--line-color);
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .simple-line:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            width: 15px;
+            height: 15px;
+            background: var(--line-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .section-title {
@@ -590,37 +612,38 @@
     <header class="page-header">
         <div class="container">
             <h1 class="site-title">VITALÉTHÉIA</h1>
-            <p class="site-subtitle">Naturopathie Intégrative & Prévention Santé</p>
+            <p class="site-subtitle">Naturopathie Scientifique et Intégrative</p>
+            <div class="simple-line"></div>
+            <p style="margin: 2rem 0; font-size: 1.2rem; font-style: italic;">
+                Comprendre pour prévenir. Prévenir pour mieux vivre.
+            </p>
             <p class="practitioner-info">
                 Maxence Allain
             </p>
             <p class="practitioner-title">
-                Praticien de Naturopathie certifié et adhérent au 
-                <span class="spn-link" onclick="window.open('https://syndicat-naturopathie.fr/', '_blank')">
-                    SPN
-                    <span class="spn-tooltip">Visiter le site du SPN</span>
-                </span>
+                Praticien de Santé Certifié
             </p>
-        </div>
-        
-        <!-- Séparation personnalisée -->
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
+            <div style="margin-top: 2rem;">
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="tel:+33755614567" style="color: var(--text-color); text-decoration: none;">07 55 61 45 67</a>
+                </p>
+                <p style="margin-bottom: 0.5rem;">
+                    <a href="mailto:maxence@vitaletheia.fr" style="color: var(--text-color); text-decoration: none;">maxence@vitaletheia.fr</a>
+                </p>
+                <p>
+                    <a href="https://www.vitaletheia.fr" style="color: var(--text-color); text-decoration: none;">www.vitaletheia.fr</a>
+                </p>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1.1rem;">
+                Consultations sur Cajarc, chez vous, ou en téléconsultation.
+            </p>
         </div>
     </header>
 
     <!-- Section Approche -->
     <section id="approche" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
-            <h2 class="section-title">Une Approche Globale et Intégrative</h2>
+            <h2 class="section-title">Approche Globale et Moderne de la Santé</h2>
             
             <div class="card-grid">
                 <div class="modern-card">
@@ -643,22 +666,11 @@
                 <p style="font-size: 1.2rem;"><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
             </div>
         </div>
-        
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
+        <div class="simple-line"></div>
     </section>
 
     <!-- Section Pourquoi Consulter -->
     <section id="pourquoi" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
             <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
             
@@ -698,22 +710,11 @@
                 <p style="font-style: italic; font-size: 1.1rem;"><em>En complément de votre suivi médical, jamais en remplacement</em></p>
             </div>
         </div>
-        
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
+        <div class="simple-line"></div>
     </section>
 
     <!-- Section La Consultation -->
     <section id="consultation" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
             <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
             
@@ -721,7 +722,7 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Bilan Initial Complet (1h30)</h3>
+                        <h3>Bilan Initial Complet (90-120min)</h3>
                         <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
                     </div>
                 </div>
@@ -730,35 +731,25 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Programme Personnalisé</h3>
-                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement.</p>
+                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. 
+                        <br>Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement. Remise sous 72h d'un compte-rendu personnalisé par email.</br></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Suivi & Ajustements (45min-1h)</h3>
+                        <h3>Suivi & Ajustements (45-60min)</h3>
                         <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
+        <div class="simple-line"></div>
     </section>
 
     <!-- Section Tarifs -->
     <section id="tarifs" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
             <h2 class="section-title">Tarifs & Prestations</h2>
             
@@ -808,22 +799,11 @@
                 <p style="font-style: italic;">Certaines mutuelles remboursent partiellement les consultations de naturopathie. Renseignez-vous auprès de votre organisme.</p>
             </div>
         </div>
-        
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
+        <div class="simple-line"></div>
     </section>
 
     <!-- Section Blog -->
     <section id="blog" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
             <h2 class="section-title">Blog & Actualités</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -833,19 +813,19 @@
             <div class="blog-preview">
                 <div class="blog-card">
                     <div class="blog-content">
-                        <div class="blog-date">15 mars 2023</div>
-                        <h3 class="blog-title">Les bienfaits des plantes adaptogènes contre le stress</h3>
-                        <p class="blog-excerpt">Découvrez comment les plantes adaptogènes peuvent vous aider à mieux gérer le stress au quotidien...</p>
-                        <a href="#" class="blog-link">Lire l'article →</a>
+                        <div class="blog-date">1er octobre 2025</div>
+                        <h3 class="blog-title">Naturopathie et Science : Pourquoi la Guerre des Médecines est un Leurre</h3>
+                        <p class="blog-excerpt">Et si le débat entre médecine conventionnelle et naturopathie était tout simplement stérile ? Alors que les articles à charge se multiplient dans les médias...</p>
+                        <a href="article01.html" class="blog-link">Lire l'article →</a>
                     </div>
                 </div>
                 
                 <div class="blog-card">
                     <div class="blog-content">
-                        <div class="blog-date">28 février 2023</div>
-                        <h3 class="blog-title">5 conseils pour renforcer son immunité naturellement</h3>
-                        <p class="blog-excerpt">Des habitudes simples à adopter pour soutenir votre système immunitaire tout au long de l'année...</p>
-                        <a href="#" class="blog-link">Lire l'article →</a>
+                        <div class="blog-date">3 octobre 2025</div>
+                        <h3 class="blog-title">Communiqué de Presse de l'OMNES suite à l'acharnement médiatique</h3>
+                        <p class="blog-excerpt">À la suite de la promotion du livre « Naturopathie l'imposture scientifique » et de sa reprise médiatique,...</p>
+                        <a href="https://www.omnes.fr/lomnes/presse-2/revue-de-presse/view/la-naturopathie-stop-aux-amalgames-et-aux-cliches" class="blog-link">Lire l'article →</a>
                     </div>
                 </div>
                 
@@ -853,8 +833,8 @@
                     <div class="blog-content">
                         <div class="blog-date">12 février 2023</div>
                         <h3 class="blog-title">L'importance du microbiote intestinal pour la santé globale</h3>
-                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être...</p>
-                        <a href="#" class="blog-link">Lire l'article →</a>
+                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être, selon la méthode GAPS...</p>
+                        <a href="articlemicrobiote.html" class="blog-link">Lire l'article →</a>
                     </div>
                 </div>
             </div>
@@ -863,22 +843,11 @@
                 <a href="#" class="btn">Voir tous les articles</a>
             </div>
         </div>
-        
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
+        <div class="simple-line"></div>
     </section>
 
     <!-- Section Contact -->
     <section id="contact" class="section">
-        <div class="custom-divider divider-top">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,30 L900,30 C950,30 950,0 1000,0 L1200,0 L1200,0 L0,0 Z" fill="white"/>
-            </svg>
-        </div>
-        
         <div class="container">
             <h2 class="section-title">Contact</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -888,7 +857,7 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>Téléphone</h3>
-                    <a href="tel:+3375561456" class="contact-link">07 55 61 45 6</a>
+                    <a href="tel:+33755614567" class="contact-link">07 55 61 45 67</a>
                 </div>
                 
                 <div class="contact-item">
@@ -897,13 +866,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Dernière séparation avant le footer -->
-        <div class="custom-divider">
-            <svg viewBox="0 0 1200 30" preserveAspectRatio="none">
-                <path d="M0,0 L900,0 C950,0 950,30 1000,30 L1200,30 L1200,30 L0,30 Z" fill="white"/>
-            </svg>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -911,7 +873,7 @@
         <div class="container">
             <div class="footer-section">
                 <h1 class="footer-title">VITALÉTHÉIA</h1>
-                <p class="footer-subtitle">Naturopathie Intégrative & Prévention Santé</p>
+                <p class="footer-subtitle">Naturopathie Scientifique et Intégrative</p>
             </div>
             
             <div class="footer-section">
