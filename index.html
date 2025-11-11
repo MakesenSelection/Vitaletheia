@@ -3,950 +3,831 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITALÉTHÉIA - Naturopathie Moderne et Intégrative</title>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <title>Helios Vitality Code - Révélez votre potentiel énergétique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Variables CSS */
         :root {
-            --primary-color: #f4e9a3;
-            --text-color: #ffffff;
-            --background-color: #ABBAC4;
-            --accent-color: #545454;
-            --line-color: #ffffff;
+            --primary-color: #2c5530;
+            --secondary-color: #d4af37;
+            --accent-color: #8b4513;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-color: #333;
+            --transition: all 0.3s ease;
         }
-        
+
+        /* Reset et styles de base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Belleza', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.7;
+            background-color: var(--light-color);
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
-        /* Header stylisé */
-        .page-header {
-            position: relative;
-            text-align: center;
-            padding: 6rem 0 8rem;
-            background: var(--background-color);
-            color: white;
-            margin-bottom: 0;
-            overflow: hidden;
+        h1 {
+            font-size: 3.5rem;
         }
 
-        .site-title {
-            font-family: 'Versailles', serif;
-            font-size: 5rem;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--primary-color);
-            position: relative;
-            z-index: 2;
+        h2 {
+            font-size: 2.5rem;
         }
 
-        .site-subtitle {
+        h3 {
             font-size: 1.8rem;
-            margin: 0;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-            color: var(--text-color);
         }
 
-        .practitioner-info {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: var(--text-color);
+        p {
+            margin-bottom: 1rem;
         }
 
-        .practitioner-title {
-            margin-top: 0.2rem;
-            font-size: 1.2rem;
-            color: var(--text-color);
-        }
-
-        .spn-link {
-            color: var(--primary-color);
-            text-decoration: underline;
-            transition: all 0.3s;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .spn-link:hover {
-            color: #ffffff;
+        a {
             text-decoration: none;
+            color: inherit;
         }
 
-        .spn-tooltip {
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+            content: '';
             position: absolute;
-            bottom: 100%;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
 
-        .spn-link:hover .spn-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Navigation */
-        .main-nav {
-            background: var(--accent-color);
-            padding: 1rem 0;
-            position: sticky;
+        /* Header */
+        header {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
         }
 
         .nav-links {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
 
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        /* Séparations personnalisées style carte de visite */
-        .section {
-            position: relative;
-            padding: 5rem 0;
-        }
-
-        .custom-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            overflow: hidden;
-        }
-
-        .custom-divider svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .divider-top {
-            top: 0;
-            bottom: auto;
-            transform: rotate(180deg);
-        }
-
-        /* Style de ligne inspiré de la carte de visite */
-        .simple-line {
-            width: 80%;
-            height: 2px;
-            background: var(--line-color);
-            margin: 2rem auto;
-            position: relative;
-        }
-
-        .simple-line:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 75%;
-            width: 15px;
-            height: 15px;
-            background: var(--line-color);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 1rem auto;
-        }
-
-        /* Cartes modernes pour Approche Globale */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .modern-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .modern-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), transparent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .modern-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .modern-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .modern-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
+        .mobile-menu-btn {
+            display: none;
             font-size: 1.5rem;
-        }
-
-        /* Listes */
-        .checklist {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .checklist li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .checklist li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 0 1rem;
-            position: relative;
-        }
-
-        .disclaimer {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-transform: uppercase;
-        }
-
-        /* Process steps */
-        .process-step {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        .step-number {
-            background: var(--primary-color);
-            color: var(--accent-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(244, 233, 163, 0.3);
-        }
-
-        .step-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Contact section */
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .contact-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-link:hover {
-            color: var(--primary-color);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Blog section */
-        .blog-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-title {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .blog-excerpt {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1rem;
-        }
-
-        .blog-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .blog-link:hover {
-            transform: translateX(5px);
-        }
-
-        /* Tarifs section */
-        .pricing-table {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: transform 0.3s;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .pricing-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--primary-color);
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            border: 2px solid var(--primary-color);
-        }
-
-        .pricing-card.featured:before {
-            height: 7px;
-            background: linear-gradient(135deg, var(--primary-color), rgba(255, 255, 255, 0.5));
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        .price-duration {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .pricing-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Footer links */
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .footer-section {
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .footer-title {
-            font-family: 'Versailles', serif;
-            font-size: 2.5rem;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary-color);
-        }
-
-        .footer-subtitle {
-            font-size: 1.2rem;
-            margin: 0;
-            opacity: 0.9;
-            color: var(--text-color);
-        }
-
-        /* Boutons */
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--accent-color);
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            border: none;
             cursor: pointer;
         }
 
-        .btn:hover {
-            background: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
         }
 
-        /* Nouveau style pour la ligne décorative */
-        .decorative-line {
-            width: 100%;
-            height: 60px;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-size: 4rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
             display: flex;
             justify-content: center;
+            gap: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
             align-items: center;
-            margin: 2rem 0;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Products Section */
+        .products {
+            background-color: white;
+        }
+
+        .product-showcase {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .product-showcase:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .product-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .product-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .testimonials .section-title::after {
+            background-color: var(--secondary-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content, .product-showcase {
+                flex-direction: column;
+            }
+            
+            .product-showcase:nth-child(even) {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Helios <span>Vitality</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul class="nav-links">
-                <li><a href="#approche">Mon Approche</a></li>
-                <li><a href="#pourquoi">Pourquoi Consulter</a></li>
-                <li><a href="#consultation">La Consultation</a></li>
-                <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
-
-    <!-- Header stylisé -->
-    <header class="page-header">
-        <div class="container">
-            <h1 class="site-title">VITALÉTHÉIA</h1>
-            <p class="site-subtitle">Naturopathie Moderne et Intégrative</p>
-            <div class="simple-line"></div>
-            <p style="margin: 2rem 0; font-size: 1.2rem; font-style: italic;">
-                Comprendre pour prévenir. Prévenir pour mieux vivre.
-            </p>
-            <p class="practitioner-info">
-                Maxence Allain
-            </p>
-            <p class="practitioner-title">
-                Praticien de Santé Certifié et adhérent au SPN
-            </p>
-        </div>
     </header>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Approche -->
-    <section id="approche" class="section">
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
         <div class="container">
-            <h2 class="section-title">Approche Globale et Moderne de la Santé</h2>
-            
-            <div class="card-grid">
-                <div class="modern-card">
-                    <h3>🧬 Personnalisée</h3>
-                    <p>Un accompagnement sur mesure qui considère votre unicité biologique, psychologique et sociale.</p>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>🛡️ Préventive</h3>
-                    <p>Agir en amont pour maintenir un état de santé optimal et prévenir les déséquilibres.</p>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>🤝 Participative</h3>
-                    <p>Vous êtes acteur de votre santé. Je vous donne les clés pour devenir autonome.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.2rem;"><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Pourquoi Consulter -->
-    <section id="pourquoi" class="section">
-        <div class="container">
-            <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
-            
-            <div class="card-grid">
-                <div class="modern-card">
-                    <h3>💚 Préserver sa santé</h3>
-                    <ul class="checklist">
-                        <li>Renforcer son immunité</li>
-                        <li>Optimiser son alimentation</li>
-                        <li>Gérer son stress</li>
-                        <li>Améliorer son sommeil</li>
-                    </ul>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>🔄 Accompagner les transitions</h3>
-                    <ul class="checklist">
-                        <li>Grossesse & postnatal</li>
-                        <li>Ménopause</li>
-                        <li>Périodes de stress</li>
-                        <li>Changements de saison</li>
-                    </ul>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>⚖️ Soutenir l'équilibre</h3>
-                    <ul class="checklist">
-                        <li>Fatigue persistante</li>
-                        <li>Troubles digestifs</li>
-                        <li>Gestion du poids</li>
-                        <li>Équilibre émotionnel</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-style: italic; font-size: 1.1rem;"><em>En complément de votre suivi médical, jamais en remplacement</em></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section La Consultation -->
-    <section id="consultation" class="section">
-        <div class="container">
-            <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Bilan Initial Complet (90-120min)</h3>
-                        <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Programme Personnalisé</h3>
-                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. 
-                        <br>Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement. Remise sous 72h d'un compte-rendu personnalisé par email.</br></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Suivi & Ajustements (45-60min)</h3>
-                        <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
-                    </div>
+            <div class="hero-content">
+                <h1>Révélez votre potentiel énergétique</h1>
+                <p>Découvrez Helios Vitality Code, la formule révolutionnaire qui harmonise votre corps et votre esprit pour une vitalité optimale.</p>
+                <div class="hero-btns">
+                    <a href="#produits" class="btn">Découvrir nos produits</a>
+                    <a href="#a-propos" class="btn btn-secondary">En savoir plus</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Tarifs -->
-    <section id="tarifs" class="section">
+    <!-- About Section -->
+    <section class="about" id="a-propos">
         <div class="container">
-            <h2 class="section-title">Tarifs & Prestations</h2>
-            
-            <div class="pricing-table">
-                <div class="pricing-card">
-                    <h3>Consultation Initiale</h3>
-                    <div class="price">85€</div>
-                    <p class="price-duration">Durée : 90-120min</p>
-                    <ul class="pricing-features">
-                        <li>Analyse du questionnaire envoyé en amont</li>
-                        <li>Analyse habitudes de vie</li>
-                        <li>Premières recommandations</li>
-                        <li>Compte-rendu détaillé et personnalisé</li>
-                        <li>Bilan de vitalité complet</li>
-                    </ul>
-                    <a href="#contact" class="btn">Prendre RDV</a>
+            <h2 class="section-title text-center">Notre Mission</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Réveillez votre énergie intérieure</h3>
+                    <p>Helios Vitality Code est bien plus qu'un simple complément alimentaire. C'est une approche holistique de la vitalité, conçue pour harmoniser votre corps et votre esprit.</p>
+                    <p>Notre formule exclusive combine des ingrédients naturels soigneusement sélectionnés pour optimiser votre énergie, améliorer votre concentration et renforcer votre résistance au stress.</p>
+                    <p>Inspirée des sagesses ancestrales et validée par la science moderne, notre approche vous aide à retrouver l'équilibre essentiel à votre bien-être quotidien.</p>
+                    <a href="#produits" class="btn">Découvrir la formule</a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <h3>Suivi</h3>
-                    <div class="price">55€</div>
-                    <p class="price-duration">Durée : 45-60min</p>
-                    <ul class="pricing-features">
-                        <li>Évaluation des progrès</li>
-                        <li>Ajustement du programme</li>
-                        <li>Nouvelles recommandations</li>
-                        <li>Soutien motivationnel</li>
-                    </ul>
-                    <a href="#contact" class="btn">Prendre RDV</a>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Ingrédients naturels">
                 </div>
-                
-                <div class="pricing-card">
-                    <h3>Pack Suivi +</h3>
-                    <div class="price">160€</div>
-                    <p class="price-duration">Consultation initiale + 2 suivis</p>
-                    <ul class="pricing-features">
-                        <li>Consultation initiale complète</li>
-                        <li>2 consultations de suivi</li>
-                        <li>Déroulé du suivi sur 4 à 6 mois</li>
-                        <li>Suivi par email disponible</li>
-                    </ul>
-                    <a href="#contact" class="btn">Choisir ce forfait</a>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-style: italic;">Certaines mutuelles remboursent partiellement les consultations de naturopathie. Renseignez-vous auprès de votre organisme.</p>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Blog -->
-    <section id="blog" class="section">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <h2 class="section-title">Blog & Actualités</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                Découvrez mes articles sur la naturopathie, la prévention santé et les approches naturelles pour votre bien-être.
-            </p>
-            
-            <div class="blog-preview">
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">1er octobre 2025</div>
-                        <h3 class="blog-title">Naturopathie et Science : Pourquoi la Guerre des Médecines est un Leurre</h3>
-                        <p class="blog-excerpt">Et si le débat entre médecine conventionnelle et naturopathie était tout simplement stérile ? Alors que les articles à charge se multiplient dans les médias...</p>
-                        <a href="article01.html" class="blog-link">Lire l'article →</a>
+            <h2 class="section-title text-center">Nos Avantages</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <h3>Énergie Durable</h3>
+                    <p>Une vitalité qui dure toute la journée sans les pics d'énergie suivis de baisses brutales.</p>
                 </div>
-                
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">3 octobre 2025</div>
-                        <h3 class="blog-title">Communiqué de Presse de l'OMNES suite à l'acharnement médiatique</h3>
-                        <p class="blog-excerpt">À la suite de la promotion du livre « Naturopathie l'imposture scientifique » et de sa reprise médiatique,...</p>
-                        <a href="https://www.omnes.fr/lomnes/presse-2/revue-de-presse/view/la-naturopathie-stop-aux-amalgames-et-aux-cliches" class="blog-link">Lire l'article →</a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
+                    <h3>Clarté Mentale</h3>
+                    <p>Améliorez votre concentration et votre acuité mentale pour une productivité optimale.</p>
                 </div>
-                
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">12 février 2023</div>
-                        <h3 class="blog-title">L'importance du microbiote intestinal pour la santé globale</h3>
-                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être, selon la méthode GAPS...</p>
-                        <a href="articlemicrobiote.html" class="blog-link">Lire l'article →</a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
+                    <h3>Équilibre Émotionnel</h3>
+                    <p>Retrouvez la sérénité et renforcez votre résistance au stress quotidien.</p>
                 </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn">Voir tous les articles</a>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Contact -->
-    <section id="contact" class="section">
+    <!-- Products Section -->
+    <section class="products" id="produits">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous. Je serai ravi de vous accompagner dans votre démarche de santé.
-            </p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Téléphone</h3>
-                    <a href="tel:+33755614567" class="contact-link">07 55 61 45 67</a>
+            <h2 class="section-title text-center">Nos Produits</h2>
+            <div class="product-showcase">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Helios Vitality Code">
                 </div>
-                
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:maxence@vitaletheia.fr" class="contact-link">maxence@vitaletheia.fr</a>
+                <div class="product-info">
+                    <h3>Helios Vitality Code</h3>
+                    <p>Notre formule phare qui combine 12 ingrédients naturels soigneusement sélectionnés pour optimiser votre énergie vitale.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Augmente l'énergie naturelle</li>
+                        <li><i class="fas fa-check"></i> Améliore la concentration</li>
+                        <li><i class="fas fa-check"></i> Réduit la fatigue mentale</li>
+                        <li><i class="fas fa-check"></i> Favorise l'équilibre émotionnel</li>
+                    </ul>
+                    <div class="product-price">49,90€</div>
+                    <a href="#" class="btn">Commander maintenant</a>
                 </div>
             </div>
+            <div class="product-showcase">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1626573820343-0d43ce4c9d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2082&q=80" alt="Helios Focus Formula">
+                </div>
+                <div class="product-info">
+                    <h3>Helios Focus Formula</h3>
+                    <p>Spécialement conçu pour améliorer la concentration et les performances cognitives.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Stimule la mémoire</li>
+                        <li><i class="fas fa-check"></i> Améliore la clarté mentale</li>
+                        <li><i class="fas fa-check"></i> Réduit le brouillard cérébral</li>
+                        <li><i class="fas fa-check"></i> Favorise la productivité</li>
+                    </ul>
+                    <div class="product-price">44,90€</div>
+                    <a href="#" class="btn">Commander maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="temoignages">
+        <div class="container">
+            <h2 class="section-title text-center">Ce que disent nos clients</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Helios Vitality Code a changé ma vie. Après des mois de fatigue chronique, j'ai retrouvé une énergie que je pensais perdue à jamais."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Marie L.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marie L.</h4>
+                            <p>Utilisatrice depuis 6 mois</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "En tant que chef d'entreprise, ma concentration est essentielle. Helios Focus Formula m'aide à rester performant toute la journée."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Thomas B.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Thomas B.</h4>
+                            <p>Utilisateur depuis 3 mois</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Je recommande Helios à tous mes amis. L'équilibre entre énergie et sérénité que j'ai retrouvé est incroyable."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie M.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophie M.</h4>
+                            <p>Utilisatrice depuis 1 an</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Prêt à transformer votre quotidien?</h2>
+            <p>Rejoignez des milliers de personnes qui ont déjà découvert les bienfaits d'Helios Vitality Code.</p>
+            <a href="#" class="btn">Commander maintenant</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact">
         <div class="container">
-            <div class="footer-section">
-                <h1 class="footer-title">VITALÉTHÉIA</h1>
-                <p class="footer-subtitle">Naturopathie Scientifique et Intégrative</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Autres pages</h4>
-                <div class="footer-links">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Mentions RGPD</a>
-                    <a href="#">Coordonnées du Médiateur</a>
-                    <a href="#">Déontologie</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Helios Vitality</h3>
+                    <p>Notre mission est d'aider chacun à révéler son potentiel énergétique grâce à des solutions naturelles et efficaces.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Produits</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Helios Vitality Code</a></li>
+                        <li><a href="#">Helios Focus Formula</a></li>
+                        <li><a href="#">Helios Sleep Aid</a></li>
+                        <li><a href="#">Pack Découverte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Rue de la Vitalité, Paris</li>
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@heliosvitality.com</li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="disclaimer">
-                <p>MENTION IMPORTANTE : LA NATUROPATHIE EST UNE APPROCHE COMPLÉMENTAIRE QUI NE SE SUBSTITUE PAS À LA MÉDECINE CONVENTIONNELLE. JE NE POSE AUCUN DIAGNOSTIC MÉDICAL ET NE MODIFIE JAMAIS LES TRAITEMENTS EN COURS. TOUTE PATHOLOGIE DOIT ÊTRE SUIVIE PAR UN MÉDECIN.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Helios Vitality. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Changement de style du header au scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les éléments à animer
+        document.querySelectorAll('.feature-card, .product-showcase, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
