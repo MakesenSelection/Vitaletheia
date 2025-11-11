@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helios Vitality Code - Révélez votre potentiel énergétique</title>
+    <title>VITALÉTHÉIA - Naturopathie Moderne & Intégrative</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Variables CSS */
         :root {
             --primary-color: #2c5530;
-            --secondary-color: #d4af37;
-            --accent-color: #8b4513;
+            --secondary-color: #8a9a5b;
+            --accent-color: #d4af37;
             --light-color: #f8f9fa;
             --dark-color: #1a1a1a;
             --text-color: #333;
@@ -77,33 +77,31 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
+            background-color: var(--primary-color);
+            color: white;
             border: none;
             border-radius: 50px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn:hover {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--secondary-color);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .btn-secondary {
             background-color: transparent;
-            border: 2px solid var(--secondary-color);
-            color: var(--secondary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
         }
 
         .btn-secondary:hover {
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
+            background-color: var(--primary-color);
+            color: white;
         }
 
         section {
@@ -127,7 +125,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
         }
 
         /* Header */
@@ -156,7 +154,7 @@
         }
 
         .logo span {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         .nav-links {
@@ -185,7 +183,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             color: white;
@@ -246,18 +244,18 @@
             transform: scale(1.05);
         }
 
-        /* Features Section */
-        .features {
+        /* Services Section */
+        .services {
             background-color: #f8f9fa;
         }
 
-        .features-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .feature-card {
+        .service-card {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
@@ -266,59 +264,52 @@
             transition: var(--transition);
         }
 
-        .feature-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
+        .service-icon {
             font-size: 3rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
         }
 
-        /* Products Section */
-        .products {
+        /* Approach Section */
+        .approach {
             background-color: white;
         }
 
-        .product-showcase {
+        .approach-content {
             display: flex;
             align-items: center;
             gap: 50px;
             margin-bottom: 60px;
         }
 
-        .product-showcase:nth-child(even) {
+        .approach-content:nth-child(even) {
             flex-direction: row-reverse;
         }
 
-        .product-image {
+        .approach-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .product-image img {
+        .approach-image img {
             width: 100%;
             height: auto;
             transition: var(--transition);
         }
 
-        .product-image:hover img {
+        .approach-image:hover img {
             transform: scale(1.05);
         }
 
-        .product-info {
+        .approach-info {
             flex: 1;
-        }
-
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 20px 0;
         }
 
         /* Testimonials Section */
@@ -328,7 +319,7 @@
         }
 
         .testimonials .section-title::after {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
         }
 
         .testimonials-grid {
@@ -379,7 +370,7 @@
 
         /* CTA Section */
         .cta {
-            background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 85, 48, 0.9), rgba(44, 85, 48, 0.9)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
@@ -421,7 +412,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
         }
 
         .footer-links li {
@@ -435,7 +426,7 @@
 
         .footer-links a:hover {
             opacity: 1;
-            color: var(--secondary-color);
+            color: var(--accent-color);
             padding-left: 5px;
         }
 
@@ -457,7 +448,7 @@
         }
 
         .social-links a:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             color: var(--dark-color);
             transform: translateY(-3px);
         }
@@ -478,11 +469,11 @@
                 font-size: 2.2rem;
             }
             
-            .about-content, .product-showcase {
+            .about-content, .approach-content {
                 flex-direction: column;
             }
             
-            .product-showcase:nth-child(even) {
+            .approach-content:nth-child(even) {
                 flex-direction: column;
             }
         }
@@ -548,14 +539,15 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Helios <span>Vitality</span></a>
+            <a href="#" class="logo">VITALÉTHÉIA</a>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#produits">Produits</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#approche">Approche</a></li>
                 <li><a href="#temoignages">Témoignages</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -566,11 +558,11 @@
     <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
-                <h1>Révélez votre potentiel énergétique</h1>
-                <p>Découvrez Helios Vitality Code, la formule révolutionnaire qui harmonise votre corps et votre esprit pour une vitalité optimale.</p>
+                <h1>Naturopathie Moderne & Intégrative</h1>
+                <p>Retrouvez l'équilibre naturel de votre corps grâce à une approche holistique et personnalisée de la santé.</p>
                 <div class="hero-btns">
-                    <a href="#produits" class="btn">Découvrir nos produits</a>
-                    <a href="#a-propos" class="btn btn-secondary">En savoir plus</a>
+                    <a href="#contact" class="btn">Prendre rendez-vous</a>
+                    <a href="#services" class="btn btn-secondary">Découvrir nos services</a>
                 </div>
             </div>
         </div>
@@ -579,88 +571,97 @@
     <!-- About Section -->
     <section class="about" id="a-propos">
         <div class="container">
-            <h2 class="section-title text-center">Notre Mission</h2>
+            <h2 class="section-title text-center">Votre Praticien en Naturopathie</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Réveillez votre énergie intérieure</h3>
-                    <p>Helios Vitality Code est bien plus qu'un simple complément alimentaire. C'est une approche holistique de la vitalité, conçue pour harmoniser votre corps et votre esprit.</p>
-                    <p>Notre formule exclusive combine des ingrédients naturels soigneusement sélectionnés pour optimiser votre énergie, améliorer votre concentration et renforcer votre résistance au stress.</p>
-                    <p>Inspirée des sagesses ancestrales et validée par la science moderne, notre approche vous aide à retrouver l'équilibre essentiel à votre bien-être quotidien.</p>
-                    <a href="#produits" class="btn">Découvrir la formule</a>
+                    <h3>Bienvenue chez VITALÉTHÉIA</h3>
+                    <p>Je suis praticien en naturopathie moderne et intégrative, passionné par l'accompagnement des personnes vers un équilibre de santé optimal.</p>
+                    <p>Ma pratique allie les sagesses traditionnelles de la naturopathie aux avancées scientifiques récentes, pour une approche complète et personnalisée de votre bien-être.</p>
+                    <p>Je considère chaque individu dans sa globalité - physique, émotionnelle et énergétique - et vous accompagne vers l'autonomie dans la gestion de votre santé.</p>
+                    <a href="#contact" class="btn">Prendre rendez-vous</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Ingrédients naturels">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Praticien en naturopathie">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title text-center">Nos Avantages</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
+            <h2 class="section-title text-center">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
                     </div>
-                    <h3>Énergie Durable</h3>
-                    <p>Une vitalité qui dure toute la journée sans les pics d'énergie suivis de baisses brutales.</p>
+                    <h3>Consultation Naturopathique</h3>
+                    <p>Bilan complet de vitalité et programme personnalisé pour retrouver votre équilibre de santé.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Nutrition & Micronutrition</h3>
+                    <p>Conseils alimentaires adaptés à votre terrain et complémentation naturelle si nécessaire.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Phytothérapie & Aromathérapie</h3>
+                    <p>Utilisation des plantes médicinales et huiles essentielles pour soutenir votre organisme.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Clarté Mentale</h3>
-                    <p>Améliorez votre concentration et votre acuité mentale pour une productivité optimale.</p>
+                    <h3>Gestion du Stress</h3>
+                    <p>Techniques de relaxation, respiration et gestion émotionnelle pour un mieux-être durable.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Équilibre Émotionnel</h3>
-                    <p>Retrouvez la sérénité et renforcez votre résistance au stress quotidien.</p>
+                    <h3>Équilibre Hormonal</h3>
+                    <p>Accompagnement naturel pour retrouver l'équilibre endocrinien et hormonal.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Détoxification</h3>
+                    <p>Programmes d'élimination des toxines pour régénérer votre organisme en douceur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="produits">
+    <!-- Approach Section -->
+    <section class="approach" id="approche">
         <div class="container">
-            <h2 class="section-title text-center">Nos Produits</h2>
-            <div class="product-showcase">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Helios Vitality Code">
+            <h2 class="section-title text-center">Notre Approche</h2>
+            <div class="approach-content">
+                <div class="approach-image">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2120&q=80" alt="Approche holistique">
                 </div>
-                <div class="product-info">
-                    <h3>Helios Vitality Code</h3>
-                    <p>Notre formule phare qui combine 12 ingrédients naturels soigneusement sélectionnés pour optimiser votre énergie vitale.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Augmente l'énergie naturelle</li>
-                        <li><i class="fas fa-check"></i> Améliore la concentration</li>
-                        <li><i class="fas fa-check"></i> Réduit la fatigue mentale</li>
-                        <li><i class="fas fa-check"></i> Favorise l'équilibre émotionnel</li>
-                    </ul>
-                    <div class="product-price">49,90€</div>
-                    <a href="#" class="btn">Commander maintenant</a>
+                <div class="approach-info">
+                    <h3>Une Approche Holistique</h3>
+                    <p>Notre vision de la santé considère l'individu dans sa globalité, en prenant en compte tous les aspects de son être : physique, émotionnel, mental et énergétique.</p>
+                    <p>Nous recherchons les causes profondes des déséquilibres plutôt que de simplement traiter les symptômes, pour une solution durable et respectueuse de l'organisme.</p>
+                    <p>Chaque accompagnement est personnalisé selon votre terrain, vos besoins spécifiques et vos objectifs de santé.</p>
                 </div>
             </div>
-            <div class="product-showcase">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1626573820343-0d43ce4c9d78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2082&q=80" alt="Helios Focus Formula">
+            <div class="approach-content">
+                <div class="approach-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Naturopathie intégrative">
                 </div>
-                <div class="product-info">
-                    <h3>Helios Focus Formula</h3>
-                    <p>Spécialement conçu pour améliorer la concentration et les performances cognitives.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Stimule la mémoire</li>
-                        <li><i class="fas fa-check"></i> Améliore la clarté mentale</li>
-                        <li><i class="fas fa-check"></i> Réduit le brouillard cérébral</li>
-                        <li><i class="fas fa-check"></i> Favorise la productivité</li>
-                    </ul>
-                    <div class="product-price">44,90€</div>
-                    <a href="#" class="btn">Commander maintenant</a>
+                <div class="approach-info">
+                    <h3>Naturopathie Intégrative</h3>
+                    <p>Notre pratique intègre les connaissances traditionnelles de la naturopathie aux découvertes scientifiques modernes, pour une approche à la fois ancestrale et actualisée.</p>
+                    <p>Nous collaborons si nécessaire avec d'autres professionnels de santé pour un accompagnement coordonné et complémentaire.</p>
+                    <p>L'objectif est de vous rendre autonome dans la gestion de votre santé, en vous donnant les clés pour maintenir durablement votre équilibre.</p>
                 </div>
             </div>
         </div>
@@ -669,11 +670,11 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="temoignages">
         <div class="container">
-            <h2 class="section-title text-center">Ce que disent nos clients</h2>
+            <h2 class="section-title text-center">Témoignages</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Helios Vitality Code a changé ma vie. Après des mois de fatigue chronique, j'ai retrouvé une énergie que je pensais perdue à jamais."
+                        "Après des années de fatigue chronique, l'accompagnement en naturopathie m'a permis de retrouver énergie et vitalité. Les conseils personnalisés ont changé ma vie."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -681,13 +682,13 @@
                         </div>
                         <div class="author-info">
                             <h4>Marie L.</h4>
-                            <p>Utilisatrice depuis 6 mois</p>
+                            <p>Accompagnée depuis 6 mois</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "En tant que chef d'entreprise, ma concentration est essentielle. Helios Focus Formula m'aide à rester performant toute la journée."
+                        "L'approche holistique m'a aidé à résoudre des problèmes digestifs que la médecine conventionnelle n'avait pas réussi à traiter durablement. Je me sens enfin en harmonie avec mon corps."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -695,13 +696,13 @@
                         </div>
                         <div class="author-info">
                             <h4>Thomas B.</h4>
-                            <p>Utilisateur depuis 3 mois</p>
+                            <p>Accompagné depuis 4 mois</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Je recommande Helios à tous mes amis. L'équilibre entre énergie et sérénité que j'ai retrouvé est incroyable."
+                        "La gestion du stress enseignée pendant les séances m'a transformé. J'ai appris à écouter mon corps et à prendre soin de moi naturellement. Je recommande vivement!"
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
@@ -709,7 +710,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Sophie M.</h4>
-                            <p>Utilisatrice depuis 1 an</p>
+                            <p>Accompagnée depuis 1 an</p>
                         </div>
                     </div>
                 </div>
@@ -720,9 +721,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Prêt à transformer votre quotidien?</h2>
-            <p>Rejoignez des milliers de personnes qui ont déjà découvert les bienfaits d'Helios Vitality Code.</p>
-            <a href="#" class="btn">Commander maintenant</a>
+            <h2>Prêt à prendre votre santé en main?</h2>
+            <p>Prenez rendez-vous pour une consultation et découvrez comment la naturopathie peut vous aider à retrouver équilibre et vitalité.</p>
+            <a href="#contact" class="btn">Prendre rendez-vous</a>
         </div>
     </section>
 
@@ -731,13 +732,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Helios Vitality</h3>
-                    <p>Notre mission est d'aider chacun à révéler son potentiel énergétique grâce à des solutions naturelles et efficaces.</p>
+                    <h3>VITALÉTHÉIA</h3>
+                    <p>Naturopathie Moderne & Intégrative. Accompagnement personnalisé vers l'équilibre de santé.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -745,31 +745,32 @@
                     <ul class="footer-links">
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#a-propos">À propos</a></li>
-                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#approche">Approche</a></li>
                         <li><a href="#temoignages">Témoignages</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Produits</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Helios Vitality Code</a></li>
-                        <li><a href="#">Helios Focus Formula</a></li>
-                        <li><a href="#">Helios Sleep Aid</a></li>
-                        <li><a href="#">Pack Découverte</a></li>
+                        <li><a href="#">Consultation Naturopathique</a></li>
+                        <li><a href="#">Nutrition & Micronutrition</a></li>
+                        <li><a href="#">Phytothérapie</a></li>
+                        <li><a href="#">Gestion du Stress</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Rue de la Vitalité, Paris</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Rue du Bien-être, Paris</li>
                         <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
-                        <li><i class="fas fa-envelope"></i> contact@heliosvitality.com</li>
+                        <li><i class="fas fa-envelope"></i> contact@vitaletheia.com</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven: 9h-18h</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Helios Vitality. Tous droits réservés.</p>
+                <p>&copy; 2023 VITALÉTHÉIA - Naturopathie Moderne & Intégrative. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -822,7 +823,7 @@
         }, observerOptions);
 
         // Observer les éléments à animer
-        document.querySelectorAll('.feature-card, .product-showcase, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.service-card, .approach-content, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
