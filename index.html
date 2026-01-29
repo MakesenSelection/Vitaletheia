@@ -1,952 +1,523 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITALÉTHÉIA - Naturopathie Moderne et Intégrative</title>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #f4e9a3;
-            --text-color: #ffffff;
-            --background-color: #ABBAC4;
-            --accent-color: #545454;
-            --line-color: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Belleza', sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+<html lang="fr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITALÉTHÉIA | Naturopathie Moderne et Intégrative</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;display=swap" rel="stylesheet">
+
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #F8FAFC; /* slate-50 */
+}
+.font-serif {
+font-family: 'Newsreader', serif;
+}
+.font-belleza {
+font-family: 'Belleza', sans-serif;
+}
+.glass-nav {
+background: rgba(255, 255, 255, 0.85);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.fade-in-up {
+animation: fadeInUp 0.8s ease-out forwards;
+opacity: 0;
+transform: translateY(20px);
+}
+@keyframes fadeInUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+</style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style><link id="all-fonts-link-font-cormorant" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-cormorant">.font-cormorant { font-family: 'Cormorant Garamond', serif !important; }</style></head>
+<body class="text-slate-600 antialiased selection:bg-[#ABBAC4] selection:text-white">
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header stylisé */
-        .page-header {
-            position: relative;
-            text-align: center;
-            padding: 6rem 0 8rem;
-            background: var(--background-color);
-            color: white;
-            margin-bottom: 0;
-            overflow: hidden;
-        }
-
-        .site-title {
-            font-family: 'Versailles', serif;
-            font-size: 5rem;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--primary-color);
-            position: relative;
-            z-index: 2;
-        }
-
-        .site-subtitle {
-            font-size: 1.8rem;
-            margin: 0;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-            color: var(--text-color);
-        }
-
-        .practitioner-info {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: var(--text-color);
-        }
-
-        .practitioner-title {
-            margin-top: 0.2rem;
-            font-size: 1.2rem;
-            color: var(--text-color);
-        }
-
-        .spn-link {
-            color: var(--primary-color);
-            text-decoration: underline;
-            transition: all 0.3s;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .spn-link:hover {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .spn-tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .spn-link:hover .spn-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Navigation */
-        .main-nav {
-            background: var(--accent-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        /* Séparations personnalisées style carte de visite */
-        .section {
-            position: relative;
-            padding: 5rem 0;
-        }
-
-        .custom-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            overflow: hidden;
-        }
-
-        .custom-divider svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .divider-top {
-            top: 0;
-            bottom: auto;
-            transform: rotate(180deg);
-        }
-
-        /* Style de ligne inspiré de la carte de visite */
-        .simple-line {
-            width: 80%;
-            height: 2px;
-            background: var(--line-color);
-            margin: 2rem auto;
-            position: relative;
-        }
-
-        .simple-line:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 75%;
-            width: 15px;
-            height: 15px;
-            background: var(--line-color);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 1rem auto;
-        }
-
-        /* Cartes modernes pour Approche Globale */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .modern-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .modern-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), transparent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .modern-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .modern-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .modern-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        /* Listes */
-        .checklist {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .checklist li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .checklist li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 0 1rem;
-            position: relative;
-        }
-
-        .disclaimer {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-transform: uppercase;
-        }
-
-        /* Process steps */
-        .process-step {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        .step-number {
-            background: var(--primary-color);
-            color: var(--accent-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(244, 233, 163, 0.3);
-        }
-
-        .step-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Contact section */
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .contact-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-link:hover {
-            color: var(--primary-color);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Blog section */
-        .blog-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .blog-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-title {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .blog-excerpt {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1rem;
-        }
-
-        .blog-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .blog-link:hover {
-            transform: translateX(5px);
-        }
-
-        /* Tarifs section */
-        .pricing-table {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: transform 0.3s;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .pricing-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--primary-color);
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            border: 2px solid var(--primary-color);
-        }
-
-        .pricing-card.featured:before {
-            height: 7px;
-            background: linear-gradient(135deg, var(--primary-color), rgba(255, 255, 255, 0.5));
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        .price-duration {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .pricing-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Footer links */
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .footer-section {
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .footer-title {
-            font-family: 'Versailles', serif;
-            font-size: 2.5rem;
-            margin: 0 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary-color);
-        }
-
-        .footer-subtitle {
-            font-size: 1.2rem;
-            margin: 0;
-            opacity: 0.9;
-            color: var(--text-color);
-        }
-
-        /* Boutons */
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--accent-color);
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        /* Nouveau style pour la ligne décorative */
-        .decorative-line {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 2rem 0;
-        }
-    </style>
-</head>
-<body>
     <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#approche">Mon Approche</a></li>
-                <li><a href="#pourquoi">Pourquoi Consulter</a></li>
-                <li><a href="#consultation">La Consultation</a></li>
-                <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="flex h-24 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="flex flex-col items-start justify-center leading-none">
+                    <span class="text-xl font-belleza text-emerald-800 tracking-widest mb-0.5 group-hover:text-[#ABBAC4] transition-colors uppercase" style="">Vitaléthéia</span>
+                    <span class="text-[10px] font-semibold text-[#8b9d83] uppercase tracking-widest">Naturopathie Moderne</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#approche" class="text-sm font-normal text-emerald-600 hover:text-[#8b9d83] transition-colors" style="">Mon Approche</a>
+                <a href="#pourquoi" class="text-sm font-normal text-emerald-600 hover:text-[#8b9d83] transition-colors" style="">Pourquoi Consulter</a>
+                <a href="#consultation" class="text-sm font-normal text-emerald-600 hover:text-[#8b9d83] transition-colors" style="">La Consultation</a>
+                <a href="#tarifs" class="text-sm font-normal text-emerald-600 hover:text-[#8b9d83] transition-colors" style="">Tarifs</a>
+                <a href="#blog" class="text-sm font-normal text-emerald-600 hover:text-[#8b9d83] transition-colors" style="">Blog</a>
+            </div>
+
+            <!-- Bouton Réserver -->
+            <a href="#contact" class="hidden md:flex items-center gap-2 bg-emerald-800 text-emerald-50 text-sm font-normal px-6 py-2.5 rounded-full hover:bg-[#ABBAC4] transition-all duration-300 shadow-lg shadow-emerald-200/50" style="">
+                <span>Prendre RDV</span>
+                <iconify-icon icon="solar:calendar-add-linear" width="18" height="18"></iconify-icon>
+            </a>
+
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-emerald-800 hover:text-[#ABBAC4] transition-colors" style="">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="28" height="28"></iconify-icon>
+            </button>
         </div>
     </nav>
 
-    <!-- Header stylisé -->
-    <header class="page-header">
-        <div class="container">
-            <h1 class="site-title">VITALÉTHÉIA</h1>
-            <p class="site-subtitle">Naturopathie Moderne et Intégrative</p>
-            <div class="simple-line"></div>
-            <p style="margin: 2rem 0; font-size: 1.2rem; font-style: italic;">
-                Comprendre pour prévenir. Prévenir pour mieux vivre.
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#ABBAC4]">
+        <div class="absolute inset-0 z-0">
+            <!-- Abstract Image replacing Forest -->
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=2564&amp;auto=format&amp;fit=crop" alt="Abstract Blue Gold Texture" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-[pulse_20s_ease-in-out_infinite]">
+            <div class="bg-gradient-to-b from-emerald-900/40 via-emerald-800/20 to-[#F8FAFC] absolute top-0 right-0 bottom-0 left-0" style=""></div>
+        </div>
+
+        <div class="z-10 fade-in-up text-center max-w-5xl mr-auto ml-auto pt-16 pr-4 pl-4 relative">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white mb-8" style="">
+                <span class="w-2 h-2 rounded-full bg-[#f4e9a3] shadow-[0_0_10px_rgba(244,233,163,0.5)]"></span>
+                <span class="text-sm font-medium tracking-wide uppercase">Santé Intégrative</span>
+            </div>
+            
+            <h1 class="md:text-7xl lg:text-8xl leading-[1.05] uppercase text-5xl text-white tracking-widest font-belleza mb-8 drop-shadow-sm">
+                Vitaléthéia
+            </h1>
+
+            <p class="text-emerald-100 text-lg md:text-2xl max-w-2xl mx-auto font-light font-serif italic leading-relaxed mb-6 opacity-95 mix-blend-plus-lighter" style="">
+                "Comprendre pour prévenir. Prévenir pour mieux vivre."
             </p>
-            <p class="practitioner-info">
-                Maxence Allain
-            </p>
-            <p class="practitioner-title">
-                Praticien de Santé Certifié et adhérent au SPN
-            </p>
+
+            <div class="flex flex-col items-center gap-1 mb-10">
+                <span class="text-white font-medium text-lg">Maxence Allain</span>
+                <span class="text-emerald-300 text-sm uppercase tracking-wider" style="">Praticien de Santé Certifié et adhérent au SPN</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#consultation" class="w-full sm:w-auto px-8 py-4 bg-[#f4e9a3] text-emerald-900 rounded-full text-base font-medium hover:bg-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5" style="">
+                    Découvrir l'approche
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Approche -->
-    <section id="approche" class="section">
-        <div class="container">
-            <h2 class="section-title">Approche Globale et Moderne de la Santé</h2>
-            
-            <div class="card-grid">
-                <div class="modern-card">
-                    <h3>🧬 Personnalisée</h3>
-                    <p>Un accompagnement sur mesure qui considère votre unicité biologique, psychologique et sociale.</p>
+    <!-- Section: Approche (Grid Layout) -->
+    <section class="max-w-7xl mr-auto ml-auto pt-32 pr-6 pb-32 pl-6" id="approche">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="space-y-10">
+                <h2 class="md:text-5xl leading-[1.1] text-4xl text-emerald-900 tracking-tight font-serif" style="">
+                    Approche globale <br><span class="text-[#8b9d83] italic">et moderne de la santé.</span>
+                </h2>
+                <div class="space-y-6 text-emerald-600 font-light leading-relaxed text-base md:text-lg" style="">
+                    <p>
+                        Mon credo : Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.
+                    </p>
+                    <p>
+                        Une vision de la naturopathie qui ne rejette pas le progrès, mais qui replace l'individu au centre de son équilibre physiologique et émotionnel.
+                    </p>
                 </div>
                 
-                <div class="modern-card">
-                    <h3>🛡️ Préventive</h3>
-                    <p>Agir en amont pour maintenir un état de santé optimal et prévenir les déséquilibres.</p>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>🤝 Participative</h3>
-                    <p>Vous êtes acteur de votre santé. Je vous donne les clés pour devenir autonome.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.2rem;"><strong>Mon credo :</strong> Allier le meilleur des savoirs traditionnels et des avancées scientifiques modernes pour une santé durable.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Pourquoi Consulter -->
-    <section id="pourquoi" class="section">
-        <div class="container">
-            <h2 class="section-title">Quand Consulter un Naturopathe ?</h2>
-            
-            <div class="card-grid">
-                <div class="modern-card">
-                    <h3>💚 Préserver sa santé</h3>
-                    <ul class="checklist">
-                        <li>Renforcer son immunité</li>
-                        <li>Optimiser son alimentation</li>
-                        <li>Gérer son stress</li>
-                        <li>Améliorer son sommeil</li>
-                    </ul>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>🔄 Accompagner les transitions</h3>
-                    <ul class="checklist">
-                        <li>Grossesse & postnatal</li>
-                        <li>Ménopause</li>
-                        <li>Périodes de stress</li>
-                        <li>Changements de saison</li>
-                    </ul>
-                </div>
-                
-                <div class="modern-card">
-                    <h3>⚖️ Soutenir l'équilibre</h3>
-                    <ul class="checklist">
-                        <li>Fatigue persistante</li>
-                        <li>Troubles digestifs</li>
-                        <li>Gestion du poids</li>
-                        <li>Équilibre émotionnel</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-style: italic; font-size: 1.1rem;"><em>En complément de votre suivi médical, jamais en remplacement</em></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section La Consultation -->
-    <section id="consultation" class="section">
-        <div class="container">
-            <h2 class="section-title">Comment se Déroule un Accompagnement ?</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Bilan Initial Complet (90-120min)</h3>
-                        <p>Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable.</p>
+                <div class="space-y-6 pt-6">
+                    <!-- Item 1 -->
+                    <div class="flex gap-4 group">
+                        <div class="mt-1 w-10 h-10 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] shrink-0 group-hover:bg-[#f4e9a3] transition-colors duration-300">
+                            <iconify-icon icon="solar:dna-linear" width="20" height="20" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div class="">
+                            <h3 class="text-lg font-medium text-emerald-900 group-hover:text-[#8b9d83] transition-colors" style="">Personnalisée</h3>
+                            <p class="text-sm text-emerald-300" style="">Un accompagnement sur mesure qui considère votre unicité biologique, psychologique et sociale.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex gap-4 group">
+                        <div class="mt-1 w-10 h-10 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] shrink-0 group-hover:bg-[#f4e9a3] transition-colors duration-300">
+                             <iconify-icon icon="solar:shield-check-linear" width="20" height="20" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div class="">
+                            <h3 class="text-lg font-medium text-emerald-900 group-hover:text-[#8b9d83] transition-colors" style="">Préventive</h3>
+                            <p class="text-sm text-emerald-300" style="">Agir en amont pour maintenir un état de santé optimal et prévenir les déséquilibres.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="flex gap-4 group">
+                        <div class="mt-1 w-10 h-10 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] shrink-0 group-hover:bg-[#f4e9a3] transition-colors duration-300">
+                            <iconify-icon icon="solar:hand-shake-linear" width="20" height="20" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-emerald-900 group-hover:text-[#8b9d83] transition-colors" style="">Participative</h3>
+                            <p class="text-sm text-emerald-300" style="">Vous êtes acteur de votre santé. Je vous donne les clés pour devenir autonome.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="relative h-auto md:h-[640px] w-full rounded-2xl overflow-hidden group">
+                <!-- Abstract Image consistent with theme -->
+                <img src="https://images.unsplash.com/photo-1576670158605-97a14ac9e730?q=80&amp;w=2564&amp;auto=format&amp;fit=crop" alt="Abstract Balance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter grayscale-[20%]">
+                <div class="group-hover:bg-emerald-900/0 transition-colors duration-500 bg-emerald-900/10 absolute top-0 right-0 bottom-0 left-0" style=""></div>
                 
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Programme Personnalisé</h3>
-                        <p>Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. Analyse sous l'angle fonctionnel de vos comptes-rendus médicaux. 
-                        <br>Je n'ai pas le droit d'interpréter un bilan sanguin d'un point de vue médical, mais je peux analyser les paramètres biologiques pour affiner l'accompagnement. Remise sous 72h d'un compte-rendu personnalisé par email.</br></p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Suivi & Ajustements (45-60min)</h3>
-                        <p>Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès.</p>
+                <div class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-xl border border-white/50 shadow-lg" style="">
+                    <div class="flex items-start gap-5">
+                        <div class="bg-[#f4e9a3]/30 p-3 rounded-full text-[#7a6f3f] shrink-0 hidden sm:block">
+                            <iconify-icon icon="solar:quote-up-linear" width="24" height="24"></iconify-icon>
+                        </div>
+                        <div class="">
+                            <p class="text-sm md:text-base text-emerald-700 italic mb-3 font-serif leading-relaxed" style="">"La santé n'est pas seulement l'absence de maladie, c'est un état de bien-être complet physique, mental et social."</p>
+                            <div class="text-xs md:text-sm">
+                                <span class="font-medium text-emerald-900 block" style="">Maxence Allain</span>
+                                <span class="font-light text-emerald-300" style="">Fondateur de Vitaléthéia</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Tarifs -->
-    <section id="tarifs" class="section">
-        <div class="container">
-            <h2 class="section-title">Tarifs & Prestations</h2>
-            
-            <div class="pricing-table">
-                <div class="pricing-card">
-                    <h3>Consultation Initiale</h3>
-                    <div class="price">85€</div>
-                    <p class="price-duration">Durée : 90-120min</p>
-                    <ul class="pricing-features">
-                        <li>Analyse du questionnaire envoyé en amont</li>
-                        <li>Analyse habitudes de vie</li>
-                        <li>Premières recommandations</li>
-                        <li>Compte-rendu détaillé et personnalisé</li>
-                        <li>Bilan de vitalité complet</li>
-                    </ul>
-                    <a href="#contact" class="btn">Prendre RDV</a>
-                </div>
-                
-                <div class="pricing-card featured">
-                    <h3>Suivi</h3>
-                    <div class="price">55€</div>
-                    <p class="price-duration">Durée : 45-60min</p>
-                    <ul class="pricing-features">
-                        <li>Évaluation des progrès</li>
-                        <li>Ajustement du programme</li>
-                        <li>Nouvelles recommandations</li>
-                        <li>Soutien motivationnel</li>
-                    </ul>
-                    <a href="#contact" class="btn">Prendre RDV</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <h3>Pack Suivi +</h3>
-                    <div class="price">160€</div>
-                    <p class="price-duration">Consultation initiale + 2 suivis</p>
-                    <ul class="pricing-features">
-                        <li>Consultation initiale complète</li>
-                        <li>2 consultations de suivi</li>
-                        <li>Déroulé du suivi sur 4 à 6 mois</li>
-                        <li>Suivi par email disponible</li>
-                    </ul>
-                    <a href="#contact" class="btn">Choisir ce forfait</a>
-                </div>
+    <!-- Section: Pourquoi Consulter -->
+    <section id="pourquoi" class="py-32 bg-[#ABBAC4]/5 border-y border-emerald-200" style="">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-[#8b9d83] font-medium text-xs uppercase tracking-wider mb-3 block">Motifs de consultation</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-emerald-900 tracking-tight mb-6" style="">Quand consulter un Naturopathe ?</h2>
+                <p class="italic text-emerald-300" style="">En complément de votre suivi médical, jamais en remplacement.</p>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-style: italic;">Certaines mutuelles remboursent partiellement les consultations de naturopathie. Renseignez-vous auprès de votre organisme.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-emerald-200 p-8 hover:border-[#8b9d83] hover:shadow-lg transition-all duration-300" style="">
+                    <div class="w-12 h-12 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] mb-6">
+                        <iconify-icon icon="solar:heart-pulse-linear" width="24" height="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-4" style="">Préserver sa santé</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Renforcer son immunité
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Optimiser son alimentation
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Gérer son stress
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Améliorer son sommeil
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-emerald-200 p-8 hover:border-[#8b9d83] hover:shadow-lg transition-all duration-300" style="">
+                    <div class="w-12 h-12 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] mb-6">
+                        <iconify-icon icon="solar:refresh-circle-linear" width="24" height="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-4" style="">Accompagner les transitions</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Grossesse &amp; postnatal
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Ménopause
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Périodes de stress
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Changements de saison
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white border border-emerald-200 p-8 hover:border-[#8b9d83] hover:shadow-lg transition-all duration-300" style="">
+                    <div class="w-12 h-12 rounded-full bg-[#f4e9a3]/20 flex items-center justify-center text-[#7a6f3f] mb-6">
+                        <iconify-icon icon="solar:scale-linear" width="24" height="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-4" style="">Soutenir l'équilibre</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Fatigue persistante
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Troubles digestifs
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Gestion du poids
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-emerald-300" style="">
+                            <iconify-icon icon="solar:check-circle-linear" class="shrink-0 mt-0.5 text-[#8b9d83]"></iconify-icon>
+                            Équilibre émotionnel
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <!-- Section Blog -->
-    <section id="blog" class="section">
-        <div class="container">
-            <h2 class="section-title">Blog & Actualités</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                Découvrez mes articles sur la naturopathie, la prévention santé et les approches naturelles pour votre bien-être.
+    <!-- Section: La Consultation (Steps) -->
+    <section id="consultation" class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-serif text-emerald-900 mb-4 tracking-tight" style="">Le déroulé de l'accompagnement</h2>
+            <p class="text-base md:text-lg max-w-2xl mx-auto text-emerald-300" style="">
+                Un processus structuré pour comprendre votre terrain et agir efficacement.
             </p>
-            
-            <div class="blog-preview">
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">1er octobre 2025</div>
-                        <h3 class="blog-title">Naturopathie et Science : Pourquoi la Guerre des Médecines est un Leurre</h3>
-                        <p class="blog-excerpt">Et si le débat entre médecine conventionnelle et naturopathie était tout simplement stérile ? Alors que les articles à charge se multiplient dans les médias...</p>
-                        <a href="article01.html" class="blog-link">Lire l'article →</a>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start relative group">
+                <div class="hidden md:block absolute left-[2.25rem] top-16 bottom-[-3rem] w-px bg-emerald-200 group-last:hidden" style=""></div>
+                <div class="w-16 h-16 rounded-full bg-[#f4e9a3] flex items-center justify-center text-[#545454] text-xl font-bold shrink-0 border-4 border-white shadow-md z-10">1</div>
+                <div class="flex-1 bg-white p-8 rounded-2xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow" style="">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-serif text-emerald-900" style="">Bilan Initial Complet</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8b9d83] bg-[#f4e9a3]/10 px-3 py-1 rounded-full">90-120 min</span>
                     </div>
+                    <p class="text-emerald-600 leading-relaxed" style="">
+                        Analyse approfondie de vos habitudes de vie, antécédents et objectifs de santé grâce à un questionnaire préalable. Nous prenons le temps de parcourir votre histoire de santé.
+                    </p>
                 </div>
-                
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">3 octobre 2025</div>
-                        <h3 class="blog-title">Communiqué de Presse de l'OMNES suite à l'acharnement médiatique</h3>
-                        <p class="blog-excerpt">À la suite de la promotion du livre « Naturopathie l'imposture scientifique » et de sa reprise médiatique,...</p>
-                        <a href="https://www.omnes.fr/lomnes/presse-2/revue-de-presse/view/la-naturopathie-stop-aux-amalgames-et-aux-cliches" class="blog-link">Lire l'article →</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-content">
-                        <div class="blog-date">12 février 2023</div>
-                        <h3 class="blog-title">L'importance du microbiote intestinal pour la santé globale</h3>
-                        <p class="blog-excerpt">Comment prendre soin de votre flore intestinale pour améliorer votre santé et votre bien-être, selon la méthode GAPS...</p>
-                        <a href="articlemicrobiote.html" class="blog-link">Lire l'article →</a>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start relative group">
+                 <div class="hidden md:block absolute left-[2.25rem] top-16 bottom-[-3rem] w-px bg-emerald-200 group-last:hidden" style=""></div>
+                 <div class="w-16 h-16 rounded-full bg-white border-2 border-[#f4e9a3] flex items-center justify-center text-[#545454] text-xl font-bold shrink-0 shadow-md z-10">2</div>
+                <div class="flex-1 bg-white p-8 rounded-2xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow" style="">
+                    <h3 class="text-xl font-serif text-emerald-900 mb-4" style="">Programme Personnalisé</h3>
+                    <p class="text-emerald-600 leading-relaxed mb-4" style="">
+                        Élaboration d'un plan d'action concret adapté à votre mode de vie avec des recommandations en nutrition, gestion du stress et hygiène de vie. 
+                    </p>
+                    <div class="bg-emerald-50 p-4 rounded-lg text-sm border border-emerald-100 text-emerald-300" style="">
+                        <p> Analyse fonctionnelle de vos bilans biologiques possible pour affiner l'accompagnement (sans interprétation médicale). Remise d'un compte-rendu sous 72h.</p>
                     </div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn">Voir tous les articles</a>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start relative">
+                <div class="w-16 h-16 rounded-full bg-white border-2 border-[#f4e9a3] flex items-center justify-center text-[#545454] text-xl font-bold shrink-0 shadow-md z-10">3</div>
+                <div class="flex-1 bg-white p-8 rounded-2xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow" style="">
+                     <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-serif text-emerald-900" style="">Suivi &amp; Ajustements</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-[#8b9d83] bg-[#f4e9a3]/10 px-3 py-1 rounded-full">45-60 min</span>
+                    </div>
+                    <p class="text-emerald-600 leading-relaxed" style="">
+                        Points réguliers pour adapter les recommandations, soutenir votre motivation et mesurer vos progrès. L'accompagnement s'ajuste à votre évolution.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ligne décorative -->
-    <div class="decorative-line">
-        <svg width="100%" height="60" viewBox="0 0 1000 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m 19 -2 h -11 m -18 2 h 14 c 3 0 1 -2 4 -2" 
-                  stroke="#8b9d83" 
-                  stroke-width="2" 
-                  fill="none"
-                  stroke-linecap="round"/>
-        </svg>
-    </div>
+    <!-- Section: Tarifs -->
+    <section id="tarifs" class="py-32 bg-emerald-900 text-white relative overflow-hidden" style="">
+        <!-- Abstract background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=2564&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover grayscale">
+        </div>
 
-    <!-- Section Contact -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous. Je serai ravi de vous accompagner dans votre démarche de santé.
-            </p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Téléphone</h3>
-                    <a href="tel:+33755614567" class="contact-link">07 55 61 45 67</a>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-[#f4e9a3] mb-4 tracking-tight">Tarifs &amp; Prestations</h2>
+                <p class="text-emerald-400" style="">Investissez dans votre capital santé durablement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors" style="">
+                    <h3 class="text-xl font-medium text-white mb-2">Consultation Initiale</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-serif text-[#f4e9a3]">85€</span>
+                        <span class="text-sm text-emerald-400" style="">/ 90-120 min</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-emerald-300 mb-8" style="">
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Analyse questionnaire</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Bilan de vitalité complet</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Compte-rendu détaillé</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-full border border-white/20 hover:bg-white hover:text-emerald-900 transition-all text-sm font-medium" style="">Prendre RDV</a>
                 </div>
-                
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:contact@vitaletheia.fr" class="contact-link">contact@vitaletheia.fr</a>
+
+                <!-- Card 2 (Featured) -->
+                <div class="bg-[#f4e9a3] rounded-2xl p-8 transform md:-translate-y-4 shadow-xl text-emerald-900 relative" style="">
+                    <div class="absolute top-0 right-0 bg-white text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">Recommandé</div>
+                    <h3 class="text-xl font-medium mb-2">Pack Suivi +</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-serif text-emerald-900" style="">160€</span>
+                        <span class="text-sm text-emerald-700" style="">/ 4 à 6 mois</span>
+                    </div>
+                    <p class="text-sm text-emerald-700 mb-6 border-b border-emerald-900/10 pb-4" style="">Un accompagnement complet pour des résultats durables.</p>
+                    <ul class="space-y-4 text-sm text-emerald-800 mb-8 font-medium" style="">
+                        <li class="flex gap-3"><iconify-icon icon="solar:star-linear" class="shrink-0"></iconify-icon>Consultation initiale complète</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:star-linear" class="shrink-0"></iconify-icon>2 consultations de suivi</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:star-linear" class="shrink-0"></iconify-icon>Suivi par email disponible</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-full bg-emerald-900 text-[#f4e9a3] hover:bg-emerald-800 transition-all text-sm font-medium shadow-lg" style="">Choisir ce forfait</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors" style="">
+                    <h3 class="text-xl font-medium text-white mb-2">Suivi</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-serif text-[#f4e9a3]">55€</span>
+                        <span class="text-sm text-emerald-400" style="">/ 45-60 min</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-emerald-300 mb-8" style="">
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Évaluation des progrès</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Ajustement du programme</li>
+                        <li class="flex gap-3"><iconify-icon icon="solar:check-circle-linear" class="text-[#f4e9a3] shrink-0"></iconify-icon>Soutien motivationnel</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center py-3 rounded-full border border-white/20 hover:bg-white hover:text-emerald-900 transition-all text-sm font-medium" style="">Prendre RDV</a>
                 </div>
             </div>
+            
+            <p class="text-center text-sm mt-12 italic text-emerald-300" style="">
+                Certaines mutuelles remboursent partiellement les consultations de naturopathie. Renseignez-vous auprès de votre organisme.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: Blog -->
+    <section id="blog" class="py-32 px-6 bg-emerald-50" style="">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-emerald-900 mb-12 tracking-tight" style="">Actualités &amp; Réflexions</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="flex flex-col group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-emerald-200 relative" style="">
+                        <!-- Placeholder for blog image with abstract overlay -->
+                         <div class="absolute inset-0 bg-[#ABBAC4] opacity-20"></div>
+                         <div class="absolute inset-0 flex items-center justify-center text-emerald-400" style="">
+                             <iconify-icon icon="solar:file-text-linear" width="48"></iconify-icon>
+                         </div>
+                    </div>
+                    <span class="text-xs font-semibold text-[#8b9d83] uppercase mb-2">1er Octobre 2025</span>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-2 group-hover:text-[#8b9d83] transition-colors" style="">Naturopathie et Science</h3>
+                    <p class="text-sm line-clamp-3 mb-4 text-emerald-300" style="">
+                        Et si le débat entre médecine conventionnelle et naturopathie était tout simplement stérile ? Une réflexion sur la complémentarité des approches.
+                    </p>
+                    <a href="#" class="text-sm font-medium text-emerald-900 underline underline-offset-4 decoration-emerald-300 hover:decoration-[#8b9d83] mt-auto" style="">Lire l'article</a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="flex flex-col group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-emerald-200 relative" style="">
+                        <div class="absolute inset-0 bg-[#f4e9a3] opacity-20"></div>
+                         <div class="absolute inset-0 flex items-center justify-center text-emerald-400" style="">
+                             <iconify-icon icon="solar:megaphone-linear" width="48"></iconify-icon>
+                         </div>
+                    </div>
+                    <span class="text-xs font-semibold text-[#8b9d83] uppercase mb-2">3 Octobre 2025</span>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-2 group-hover:text-[#8b9d83] transition-colors" style="">Communiqué OMNES</h3>
+                    <p class="text-sm line-clamp-3 mb-4 text-emerald-300" style="">
+                        Retour sur la polémique médiatique : stop aux amalgames et aux clichés sur la profession.
+                    </p>
+                    <a href="#" class="text-sm font-medium text-emerald-900 underline underline-offset-4 decoration-emerald-300 hover:decoration-[#8b9d83] mt-auto" style="">Lire l'article</a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="flex flex-col group cursor-pointer">
+                     <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-emerald-200 relative" style="">
+                        <div class="absolute inset-0 bg-[#545454] opacity-20"></div>
+                         <div class="absolute inset-0 flex items-center justify-center text-emerald-400" style="">
+                             <iconify-icon icon="solar:bacteria-linear" width="48"></iconify-icon>
+                         </div>
+                    </div>
+                    <span class="text-xs font-semibold text-[#8b9d83] uppercase mb-2">12 Février 2023</span>
+                    <h3 class="text-xl font-medium text-emerald-900 mb-2 group-hover:text-[#8b9d83] transition-colors" style="">Microbiote &amp; Santé</h3>
+                    <p class="text-sm line-clamp-3 mb-4 text-emerald-300" style="">
+                        Comment prendre soin de votre flore intestinale pour améliorer votre santé globale.
+                    </p>
+                    <a href="#" class="text-sm font-medium text-emerald-900 underline underline-offset-4 decoration-emerald-300 hover:decoration-[#8b9d83] mt-auto" style="">Lire l'article</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section class="text-center max-w-4xl mr-auto ml-auto pt-20 pr-6 pb-32 pl-6" id="contact">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#f4e9a3]/30 text-[#7a6f3f] mb-8">
+            <iconify-icon icon="solar:letter-linear" width="24" height="24"></iconify-icon>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-serif text-emerald-900 mb-6 tracking-tight" style="">Prendre Rendez-vous</h2>
+        <p class="mb-12 max-w-lg mx-auto text-lg text-emerald-300" style="">
+            Je suis à votre écoute pour vous accompagner vers une meilleure vitalité.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a href="tel:+33755614567" class="flex items-center justify-center gap-3 p-6 bg-white border border-emerald-200 rounded-xl hover:border-[#8b9d83] hover:shadow-md transition-all group" style="">
+                <iconify-icon icon="solar:phone-calling-linear" class="text-emerald-400 group-hover:text-[#8b9d83]" width="24" style=""></iconify-icon>
+                <span class="text-emerald-800 font-medium" style="">07 55 61 45 67</span>
+            </a>
+            <a href="mailto:contact@vitaletheia.fr" class="flex items-center justify-center gap-3 p-6 bg-white border border-emerald-200 rounded-xl hover:border-[#8b9d83] hover:shadow-md transition-all group" style="">
+                <iconify-icon icon="solar:mailbox-linear" class="text-emerald-400 group-hover:text-[#8b9d83]" width="24" style=""></iconify-icon>
+                <span class="text-emerald-800 font-medium" style="">contact@vitaletheia.fr</span>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-section">
-                <h1 class="footer-title">VITALÉTHÉIA</h1>
-                <p class="footer-subtitle">Naturopathie Scientifique et Intégrative</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Autres pages</h4>
-                <div class="footer-links">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Mentions RGPD</a>
-                    <a href="#">Coordonnées du Médiateur</a>
-                    <a href="#">Déontologie</a>
+    <footer class="bg-white border-emerald-100 border-t pt-20 pr-6 pb-10 pl-6" style="">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="space-y-6 col-span-1 md:col-span-2">
+                    <a href="#" class="flex flex-col items-start leading-none group">
+                        <span class="text-2xl font-belleza text-emerald-900 tracking-widest uppercase mb-1" style="">Vitaléthéia</span>
+                        <span class="text-[10px] font-bold text-[#8b9d83] uppercase tracking-widest">Naturopathie Intégrative</span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-md bg-emerald-50 p-4 rounded-lg border border-emerald-100 text-emerald-300" style="">
+                        <strong>MENTION IMPORTANTE :</strong> La naturopathie est une approche complémentaire qui ne se substitue pas à la médecine conventionnelle. Je ne pose aucun diagnostic médical et ne modifie jamais les traitements en cours. Toute pathologie doit être suivie par un médecin.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xs font-semibold text-emerald-900 uppercase tracking-wider mb-6" style="">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#approche" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Approche</a></li>
+                        <li><a href="#consultation" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Consultation</a></li>
+                        <li><a href="#tarifs" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Tarifs</a></li>
+                        <li><a href="#blog" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold text-emerald-900 uppercase tracking-wider mb-6" style="">Informations</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Mentions RGPD</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Médiateur</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#8b9d83] transition-colors text-emerald-300" style="">Déontologie</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="disclaimer">
-                <p>MENTION IMPORTANTE : LA NATUROPATHIE EST UNE APPROCHE COMPLÉMENTAIRE QUI NE SE SUBSTITUE PAS À LA MÉDECINE CONVENTIONNELLE. JE NE POSE AUCUN DIAGNOSTIC MÉDICAL ET NE MODIFIE JAMAIS LES TRAITEMENTS EN COURS. TOUTE PATHOLOGIE DOIT ÊTRE SUIVIE PAR UN MÉDECIN.</p>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-emerald-100 gap-6" style="">
+                <p class="text-xs text-emerald-400" style="">© 2025 Vitaléthéia. Tous droits réservés.</p>
+                <div class="flex gap-4">
+                   <div class="w-8 h-8 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-400" style="">
+                       <iconify-icon icon="solar:camera-linear"></iconify-icon>
+                   </div>
+                   <div class="w-8 h-8 flex items-center justify-center rounded-full bg-emerald-100 text-emerald-400" style="">
+                       <iconify-icon icon="solar:user-linear"></iconify-icon>
+                   </div>
+                </div>
             </div>
         </div>
     </footer>
-</body>
-</html>
+</body></html>
